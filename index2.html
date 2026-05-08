@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+================================================================================
+  GLOBAL EVENT CENTERS DIRECTORY - Single File Website
+  Save this file as: index.html
+  Open in any browser - works offline (except Font Awesome icons need internet)
+================================================================================
+
+  HOW TO ADD MORE VENUES (TWO WAYS):
+
+  WAY 1 - CSV Upload Button (easiest, no coding)
+    - Click "Import CSV" on the page, choose your spreadsheet.
+    - Required columns: name, country, city, address, phone
+    - Optional columns: continent, state, email, website, description, tags
+    - Tags should be separated by | (pipe) or ; (semicolon).
+    - After import, click "Download Updated index.html" to save a NEW file
+      with all venues permanently embedded. Re-upload that file to your host
+      so all visitors see the new venues.
+
+  WAY 2 - Edit the JavaScript array directly (advanced)
+    - Scroll to "EVENT CENTERS DATA" near the bottom and follow instructions.
+
+  XML SITEMAP REFERENCE (paste into a separate sitemap.xml when hosting):
+  <?xml version="1.0" encoding="UTF-8"?>
+  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url><loc>https://yourdomain.com/</loc><priority>1.0</priority></url>
+    <url><loc>https://yourdomain.com/#directory</loc><priority>0.9</priority></url>
+    <url><loc>https://yourdomain.com/#africa</loc><priority>0.9</priority></url>
+    <url><loc>https://yourdomain.com/#north-america</loc><priority>0.8</priority></url>
+    <url><loc>https://yourdomain.com/#europe</loc><priority>0.8</priority></url>
+    <url><loc>https://yourdomain.com/#asia</loc><priority>0.8</priority></url>
+    <url><loc>https://yourdomain.com/#oceania</loc><priority>0.8</priority></url>
+    <url><loc>https://yourdomain.com/#south-america</loc><priority>0.8</priority></url>
+    <url><loc>https://yourdomain.com/#add-listing</loc><priority>0.7</priority></url>
+  </urlset>
+================================================================================
+-->
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Global Event Centers Directory | Contacts, Addresses, Phone Numbers by Country, State & City</title>
+<meta name="description" content="The world's most complete directory of event centers, conference venues, wedding halls and exhibition centers. Find verified contacts, phone numbers and addresses for venues in Lagos, Abuja, Accra, Nairobi, Johannesburg, London, New York and 20+ countries.">
+<meta name="keywords" content="event centers directory, event centers in Lagos, event centers in Abuja, event centers in Port Harcourt, event venues in Accra Ghana, event centers in Nairobi, conference venues Johannesburg, wedding venues Cairo, event halls in Kumasi, banquet halls Mumbai, conference centers worldwide, venue phone numbers, event center contacts, exhibition halls">
+<meta name="author" content="Global Event Centers Directory">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="language" content="English">
+<meta name="revisit-after" content="7 days">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yourdomain.com/">
+<meta property="og:title" content="Global Event Centers Directory | Contacts, Addresses & Phone Numbers Worldwide">
+<meta property="og:description" content="Browse verified contact details for top event centers, conference venues and exhibition halls in Lagos, Abuja, Accra, Nairobi, Johannesburg, Cairo and dozens of cities worldwide.">
+<meta property="og:image" content="https://yourdomain.com/og-image.jpg">
+<meta property="og:site_name" content="Global Event Centers Directory">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://yourdomain.com/">
+<meta name="twitter:title" content="Global Event Centers Directory | Worldwide Venue Contacts">
+<meta name="twitter:description" content="The most comprehensive directory of event centers worldwide with strong coverage of Nigeria, Ghana, Kenya, South Africa, Egypt and beyond.">
+<meta name="twitter:image" content="https://yourdomain.com/og-image.jpg">
+
+<link rel="canonical" href="https://yourdomain.com/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏛️</text></svg>">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" referrerpolicy="no-referrer">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Global Event Centers Directory","url":"https://yourdomain.com/","logo":"https://yourdomain.com/logo.png","description":"A comprehensive worldwide directory of event centers, conference venues, wedding halls and exhibition centers with verified contact information.","sameAs":["https://www.facebook.com/eventcentersdirectory","https://twitter.com/eventcentersdir","https://www.linkedin.com/company/global-event-centers-directory"],"contactPoint":{"@type":"ContactPoint","contactType":"Customer Support","email":"support@globaleventcentersdirectory.com","availableLanguage":["English"]}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"Global Event Centers Directory","url":"https://yourdomain.com/","potentialAction":{"@type":"SearchAction","target":"https://yourdomain.com/?q={search_term_string}","query-input":"required name=search_term_string"}}
+</script>
+<script type="application/ld+json" id="local-business-schema">{"@context":"https://schema.org","@type":"ItemList","name":"Top Event Centers Worldwide","itemListElement":[]}</script>
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;color:#1f2937;background:#f8fafc;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:#0d9488;text-decoration:none;transition:color .2s}
+a:hover{color:#0f766e;text-decoration:underline}
+button{font-family:inherit;cursor:pointer;border:none}
+:root{--primary:#1e3a8a;--primary-light:#1e40af;--primary-dark:#172554;--accent:#0d9488;--accent-light:#14b8a6;--accent-dark:#0f766e;--card-bg:#fff;--border:#e2e8f0;--text:#1f2937;--text-light:#64748b;--text-muted:#94a3b8;--shadow-sm:0 1px 2px rgba(0,0,0,.05);--shadow:0 4px 12px rgba(15,23,42,.08);--shadow-lg:0 10px 30px rgba(15,23,42,.12);--radius:12px;--radius-sm:8px}
+
+.site-header{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-light) 100%);color:#fff;position:sticky;top:0;z-index:100;box-shadow:var(--shadow)}
+.header-inner{max-width:1280px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;font-size:1.15rem;font-weight:700;color:#fff;text-decoration:none}
+.logo:hover{color:#fff;text-decoration:none}
+.logo i{color:var(--accent-light);font-size:1.5rem}
+.logo span{white-space:nowrap}
+.main-nav{display:flex;align-items:center;gap:22px}
+.main-nav a{color:rgba(255,255,255,.92);font-weight:500;font-size:.95rem;padding:6px 0;border-bottom:2px solid transparent;transition:all .2s}
+.main-nav a:hover{color:#fff;border-bottom-color:var(--accent-light);text-decoration:none}
+.menu-toggle{display:none;background:transparent;color:#fff;font-size:1.5rem;padding:6px 10px}
+
+.hero{background:linear-gradient(135deg,var(--primary-dark) 0%,var(--primary) 50%,var(--accent-dark) 100%);color:#fff;padding:70px 20px 90px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 20% 50%,rgba(20,184,166,.15) 0%,transparent 50%),radial-gradient(circle at 80% 30%,rgba(99,102,241,.15) 0%,transparent 50%);pointer-events:none}
+.hero-inner{max-width:880px;margin:0 auto;position:relative;z-index:1}
+.hero h1{font-size:clamp(1.85rem,4.5vw,3rem);font-weight:800;line-height:1.15;margin-bottom:18px;letter-spacing:-.02em}
+.hero h1 .accent{color:var(--accent-light)}
+.hero p.lead{font-size:clamp(1rem,1.6vw,1.18rem);color:rgba(255,255,255,.92);margin-bottom:32px;max-width:700px;margin-left:auto;margin-right:auto}
+.hero-search{display:flex;background:#fff;border-radius:50px;overflow:hidden;box-shadow:var(--shadow-lg);max-width:640px;margin:0 auto}
+.hero-search input{flex:1;border:none;padding:16px 22px;font-size:1rem;outline:none;color:var(--text);background:transparent}
+.hero-search button{background:var(--accent);color:#fff;padding:0 26px;font-weight:600;font-size:.95rem;display:flex;align-items:center;gap:8px;transition:background .2s}
+.hero-search button:hover{background:var(--accent-dark)}
+.hero-stats{display:flex;justify-content:center;gap:40px;margin-top:38px;flex-wrap:wrap}
+.hero-stat{text-align:center}
+.hero-stat strong{display:block;font-size:1.7rem;font-weight:800;color:var(--accent-light);line-height:1}
+.hero-stat span{font-size:.85rem;color:rgba(255,255,255,.85);text-transform:uppercase;letter-spacing:.05em;margin-top:6px;display:block}
+
+.main-wrap{max-width:1280px;margin:0 auto;padding:40px 20px;display:grid;grid-template-columns:280px 1fr;gap:32px}
+@media(max-width:900px){.main-wrap{grid-template-columns:1fr;gap:20px}}
+
+.sidebar{background:#fff;border-radius:var(--radius);padding:22px 18px;box-shadow:var(--shadow-sm);height:fit-content;position:sticky;top:80px;max-height:calc(100vh - 100px);overflow-y:auto}
+.sidebar-title{font-size:.95rem;font-weight:700;color:var(--primary-dark);margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--border);display:flex;align-items:center;gap:8px}
+.tree-menu{list-style:none;font-size:.92rem}
+.tree-menu .tree-item{margin-bottom:2px}
+.tree-menu .tree-toggle{background:none;border:none;color:var(--text);width:100%;text-align:left;padding:7px 8px;border-radius:6px;font-size:.92rem;font-weight:500;display:flex;align-items:center;gap:8px;cursor:pointer;transition:background .15s}
+.tree-menu .tree-toggle:hover{background:#f1f5f9;color:var(--primary)}
+.tree-menu .tree-toggle .chev{transition:transform .2s;font-size:.7rem;color:var(--text-muted);width:10px}
+.tree-menu .tree-toggle.open .chev{transform:rotate(90deg)}
+.tree-menu .tree-toggle .count{margin-left:auto;background:#e0f2fe;color:var(--primary);font-size:.72rem;padding:2px 8px;border-radius:999px;font-weight:600}
+.tree-children{list-style:none;padding-left:18px;display:none}
+.tree-children.open{display:block}
+.tree-children .tree-toggle{font-weight:400;font-size:.88rem;padding:6px 8px}
+.tree-children .tree-toggle .count{background:#f1f5f9;color:var(--text-light)}
+.tree-children .tree-children .tree-toggle{font-size:.85rem;color:var(--text-light)}
+.tree-leaf{padding:5px 8px 5px 22px;font-size:.85rem;color:var(--text-light);cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:6px;transition:all .15s}
+.tree-leaf:hover{background:#ecfdf5;color:var(--accent-dark)}
+.tree-leaf::before{content:'\f3c5';font-family:'Font Awesome 6 Free';font-weight:900;font-size:.7rem;color:var(--accent)}
+
+.import-banner{background:linear-gradient(135deg,#ecfeff 0%,#f0fdfa 100%);border:1.5px dashed var(--accent-light);border-radius:var(--radius);padding:14px 18px;margin-bottom:18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.import-banner .ib-text{flex:1;min-width:220px;font-size:.88rem;color:var(--text)}
+.import-banner .ib-text strong{color:var(--accent-dark)}
+.import-banner .ib-buttons{display:flex;gap:8px;flex-wrap:wrap}
+.btn-import,.btn-template,.btn-clear,.btn-download{padding:9px 16px;border-radius:8px;font-size:.85rem;font-weight:600;display:inline-flex;align-items:center;gap:6px;transition:transform .15s,box-shadow .15s,background .15s;cursor:pointer}
+.btn-import{background:var(--accent);color:#fff}
+.btn-import:hover{background:var(--accent-dark);transform:translateY(-1px)}
+.btn-download{background:var(--primary);color:#fff}
+.btn-download:hover{background:var(--primary-dark);transform:translateY(-1px)}
+.btn-template{background:#fff;color:var(--primary);border:1.5px solid var(--primary)}
+.btn-template:hover{background:var(--primary);color:#fff}
+.btn-clear{background:#fff;color:#b91c1c;border:1.5px solid #fecaca}
+.btn-clear:hover{background:#fef2f2}
+
+.content-area{min-width:0}
+.filters-bar{background:#fff;padding:18px;border-radius:var(--radius);box-shadow:var(--shadow-sm);margin-bottom:22px;display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:12px}
+@media(max-width:768px){.filters-bar{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.filters-bar{grid-template-columns:1fr}}
+.filters-bar input,.filters-bar select{padding:11px 14px;border:1.5px solid var(--border);border-radius:var(--radius-sm);font-size:.92rem;background:#fff;color:var(--text);outline:none;transition:border-color .2s,box-shadow .2s;font-family:inherit;width:100%}
+.filters-bar input:focus,.filters-bar select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(13,148,136,.1)}
+
+.results-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:18px;padding:0 4px}
+.results-header h2{font-size:1.3rem;color:var(--primary-dark);font-weight:700}
+.results-count{color:var(--text-light);font-size:.9rem}
+.results-count strong{color:var(--accent-dark)}
+.view-toggle{display:flex;gap:4px;background:#fff;padding:4px;border-radius:8px;box-shadow:var(--shadow-sm)}
+.view-toggle button{background:transparent;color:var(--text-light);padding:6px 12px;border-radius:6px;font-size:.85rem;transition:all .2s}
+.view-toggle button.active{background:var(--accent);color:#fff}
+
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:18px}
+.event-card{background:var(--card-bg);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow-sm);border:1px solid var(--border);cursor:pointer;transition:transform .2s,box-shadow .2s,border-color .2s;display:flex;flex-direction:column;gap:10px;position:relative;overflow:hidden}
+.event-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--primary),var(--accent));opacity:0;transition:opacity .2s}
+.event-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:var(--accent-light)}
+.event-card:hover::before{opacity:1}
+.event-card .user-badge{position:absolute;top:8px;right:8px;background:#fef3c7;color:#92400e;font-size:.65rem;font-weight:700;padding:3px 8px;border-radius:999px;text-transform:uppercase;letter-spacing:.04em;border:1px solid #fde68a}
+.card-header{display:flex;align-items:flex-start;gap:12px}
+.card-icon{width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.05rem;flex-shrink:0}
+.card-title{flex:1;min-width:0}
+.card-title h3{font-size:1.05rem;font-weight:700;color:var(--primary-dark);margin-bottom:4px;line-height:1.3}
+.card-location{font-size:.82rem;color:var(--text-light);display:flex;align-items:center;gap:5px}
+.card-description{font-size:.88rem;color:var(--text-light);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin:4px 0 8px}
+.card-tags{display:flex;flex-wrap:wrap;gap:5px}
+.tag{background:#ecfdf5;color:var(--accent-dark);font-size:.72rem;font-weight:600;padding:3px 9px;border-radius:999px;border:1px solid #a7f3d0}
+.tag.alt{background:#eff6ff;color:var(--primary-light);border-color:#bfdbfe}
+.card-footer{display:flex;gap:12px;padding-top:12px;border-top:1px solid var(--border);margin-top:auto;font-size:.8rem;color:var(--text-light);flex-wrap:wrap}
+.card-footer span{display:flex;align-items:center;gap:5px}
+.card-footer i{color:var(--accent)}
+
+.pagination{display:flex;justify-content:center;gap:6px;margin-top:24px;flex-wrap:wrap}
+.pagination button{background:#fff;color:var(--text);padding:8px 14px;border-radius:8px;font-size:.88rem;font-weight:600;border:1px solid var(--border);transition:all .15s;min-width:38px}
+.pagination button:hover:not(:disabled){background:var(--accent);color:#fff;border-color:var(--accent)}
+.pagination button.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+.pagination button:disabled{opacity:.4;cursor:not-allowed}
+
+.cards-table{width:100%;background:#fff;border-radius:var(--radius);overflow-x:auto;box-shadow:var(--shadow-sm);display:none}
+.cards-table table{width:100%;border-collapse:collapse;min-width:720px}
+.cards-table th,.cards-table td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--border);font-size:.9rem}
+.cards-table th{background:#f8fafc;color:var(--primary-dark);font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.03em;position:sticky;top:0}
+.cards-table tbody tr{cursor:pointer;transition:background .15s}
+.cards-table tbody tr:hover{background:#f0fdfa}
+
+.no-results{text-align:center;padding:60px 20px;background:#fff;border-radius:var(--radius);border:2px dashed var(--border);color:var(--text-light)}
+.no-results i{font-size:3rem;color:var(--text-muted);margin-bottom:14px}
+.no-results h3{color:var(--primary-dark);margin-bottom:6px}
+
+.modal-backdrop{display:none;position:fixed;inset:0;background:rgba(15,23,42,.65);backdrop-filter:blur(4px);z-index:200;padding:20px;overflow-y:auto;align-items:flex-start;justify-content:center}
+.modal-backdrop.active{display:flex}
+.modal{background:#fff;border-radius:var(--radius);max-width:680px;width:100%;margin:30px auto;position:relative;box-shadow:var(--shadow-lg);animation:modalIn .25s ease}
+@keyframes modalIn{from{opacity:0;transform:translateY(15px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+.modal-header{background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff;padding:26px 30px;border-radius:var(--radius) var(--radius) 0 0;position:relative}
+.modal-header h2{font-size:1.45rem;font-weight:700;padding-right:40px;line-height:1.25}
+.modal-header .modal-loc{margin-top:6px;opacity:.9;font-size:.92rem}
+.modal-close{position:absolute;top:18px;right:18px;background:rgba(255,255,255,.18);color:#fff;width:36px;height:36px;border-radius:50%;font-size:1.05rem;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.modal-close:hover{background:rgba(255,255,255,.32)}
+.modal-body{padding:26px 30px}
+.modal-section{margin-bottom:20px}
+.modal-section:last-child{margin-bottom:0}
+.modal-section h4{font-size:.78rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+.modal-section p{color:var(--text);font-size:.95rem;line-height:1.6}
+.contact-row{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid var(--border)}
+.contact-row:last-child{border-bottom:none}
+.contact-row .ico{width:36px;height:36px;background:#ecfdf5;color:var(--accent-dark);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.contact-row .info{flex:1;min-width:0;word-break:break-word}
+.contact-row .info span{display:block;font-size:.74rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em;font-weight:600}
+.contact-row .info a,.contact-row .info p{font-size:.93rem;color:var(--text);font-weight:500}
+.contact-row .info a:hover{color:var(--accent-dark)}
+
+.add-section{background:linear-gradient(135deg,var(--primary-dark) 0%,var(--primary) 100%);color:#fff;padding:70px 20px;margin-top:60px}
+.add-inner{max-width:720px;margin:0 auto}
+.add-inner h2{font-size:clamp(1.6rem,3vw,2.1rem);font-weight:800;text-align:center;margin-bottom:10px}
+.add-inner > p{text-align:center;color:rgba(255,255,255,.85);margin-bottom:30px}
+.add-form{background:#fff;border-radius:var(--radius);padding:30px;box-shadow:var(--shadow-lg);display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:600px){.add-form{grid-template-columns:1fr;padding:22px}}
+.add-form .full{grid-column:1 / -1}
+.add-form label{display:block;font-size:.85rem;font-weight:600;color:var(--primary-dark);margin-bottom:6px}
+.add-form input,.add-form textarea,.add-form select{width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:var(--radius-sm);font-size:.94rem;font-family:inherit;outline:none;transition:border-color .2s,box-shadow .2s;color:var(--text)}
+.add-form input:focus,.add-form textarea:focus,.add-form select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(13,148,136,.12)}
+.add-form textarea{min-height:100px;resize:vertical}
+.add-form button[type=submit]{background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff;padding:13px 20px;font-size:1rem;font-weight:600;border-radius:var(--radius-sm);transition:transform .15s,box-shadow .15s;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.add-form button[type=submit]:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.form-success{background:#ecfdf5;color:var(--accent-dark);border:1px solid #a7f3d0;padding:14px 18px;border-radius:var(--radius-sm);margin-top:14px;font-size:.9rem;display:none;align-items:center;gap:10px;grid-column:1 / -1}
+.form-success.show{display:flex}
+
+.site-footer{background:#0f172a;color:#cbd5e1;padding:50px 20px 20px}
+.footer-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:30px;margin-bottom:30px}
+@media(max-width:768px){.footer-inner{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.footer-inner{grid-template-columns:1fr}}
+.footer-col h4{color:#fff;font-size:.95rem;font-weight:700;margin-bottom:14px;text-transform:uppercase;letter-spacing:.04em}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:8px}
+.footer-col a{color:#94a3b8;font-size:.9rem;transition:color .2s}
+.footer-col a:hover{color:var(--accent-light);text-decoration:none}
+.footer-brand p{color:#94a3b8;font-size:.9rem;line-height:1.7;margin-top:8px}
+.footer-brand .logo{color:#fff;font-size:1.2rem;margin-bottom:12px}
+.footer-bottom{border-top:1px solid #1e293b;padding-top:20px;text-align:center;font-size:.85rem;color:#64748b}
+.footer-bottom p{margin-bottom:4px}
+
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(100px);background:#0f172a;color:#fff;padding:14px 22px;border-radius:10px;font-size:.92rem;font-weight:500;box-shadow:var(--shadow-lg);z-index:300;opacity:0;transition:transform .3s,opacity .3s;max-width:90%;display:flex;align-items:center;gap:10px}
+.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+.toast.success{background:#065f46}
+.toast.error{background:#991b1b}
+
+.hidden{display:none !important}
+@media(max-width:768px){
+  .menu-toggle{display:block}
+  .main-nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--primary-dark);flex-direction:column;align-items:stretch;padding:14px 20px;gap:4px;box-shadow:var(--shadow)}
+  .main-nav.active{display:flex}
+  .main-nav a{padding:10px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+  .sidebar{position:static;max-height:none}
+  .hero{padding:50px 20px 60px}
+  .main-wrap{padding:24px 16px}
+  .modal-header{padding:20px 22px}
+  .modal-body{padding:22px}
+}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:#f1f5f9}
+::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:5px}
+::-webkit-scrollbar-thumb:hover{background:#94a3b8}
+</style>
+</head>
+<body>
+
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <a href="#" class="logo" aria-label="Global Event Centers Directory home">
+      <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
+      <span>Global Event Centers</span>
+    </a>
+    <nav class="main-nav" id="mainNav" aria-label="Primary">
+      <a href="#directory"><i class="fa-solid fa-list" aria-hidden="true"></i> Directory</a>
+      <a href="#about">About</a>
+      <a href="#add-listing">Add Listing</a>
+      <a href="#footer">Contact</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Toggle navigation menu" aria-controls="mainNav" aria-expanded="false" onclick="toggleNav()">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+</header>
+
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="hero-inner">
+    <h1 id="hero-heading">The World's Most Complete <span class="accent">Event Centers Directory</span></h1>
+    <p class="lead">Find verified contact details, phone numbers, addresses and websites for hundreds of conference centers, wedding venues, exhibition halls and convention spaces — from event centers in Lagos and Abuja to venues in Accra, Nairobi, Johannesburg, London, New York, Sydney and beyond.</p>
+    <form class="hero-search" role="search" onsubmit="event.preventDefault(); heroSearch();">
+      <input type="search" id="heroSearchInput" placeholder="Search by name, city, country or venue type..." aria-label="Search event centers">
+      <button type="submit"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> Search</button>
+    </form>
+    <div class="hero-stats">
+      <div class="hero-stat"><strong id="statVenues">0</strong><span>Verified Venues</span></div>
+      <div class="hero-stat"><strong id="statCountries">0</strong><span>Countries</span></div>
+      <div class="hero-stat"><strong id="statCities">0</strong><span>Cities</span></div>
+      <div class="hero-stat"><strong>6</strong><span>Continents</span></div>
+    </div>
+  </div>
+</section>
+
+<main id="directory" class="main-wrap" role="main">
+
+  <aside class="sidebar" aria-label="Browse by location">
+    <h2 class="sidebar-title"><i class="fa-solid fa-earth-africa" aria-hidden="true"></i> Browse by Location</h2>
+    <ul class="tree-menu" id="treeMenu" role="tree"></ul>
+  </aside>
+
+  <section class="content-area">
+    <h2 style="position:absolute;left:-9999px;">Event Centers Directory</h2>
+
+    <div class="import-banner" id="importBanner">
+      <div class="ib-text"><strong>📥 Bulk import:</strong> Upload a CSV spreadsheet to add many venues at once. After importing, click "Download Updated File" to save a new index.html that includes them — re-upload that file to your host to publish to all visitors.</div>
+      <div class="ib-buttons">
+        <button class="btn-import" onclick="document.getElementById('csvFileInput').click()"><i class="fa-solid fa-file-csv"></i> Import CSV</button>
+        <button class="btn-template" onclick="downloadCsvTemplate()"><i class="fa-solid fa-download"></i> CSV Template</button>
+        <button class="btn-download hidden" id="btnDownloadFile" onclick="downloadUpdatedHtml()"><i class="fa-solid fa-floppy-disk"></i> Download Updated File</button>
+        <button class="btn-clear hidden" id="btnClearImports" onclick="clearImports()"><i class="fa-solid fa-trash"></i> Clear Imports</button>
+      </div>
+      <input type="file" id="csvFileInput" accept=".csv,text/csv" style="display:none" onchange="handleCsvUpload(event)">
+    </div>
+
+    <div class="filters-bar" role="region" aria-label="Filter event centers">
+      <input type="search" id="searchInput" placeholder="🔍 Search venues, cities, tags..." aria-label="Quick search">
+      <select id="countryFilter" aria-label="Filter by country"><option value="">All Countries</option></select>
+      <select id="stateFilter" aria-label="Filter by state or province"><option value="">All States/Provinces</option></select>
+      <select id="cityFilter" aria-label="Filter by city"><option value="">All Cities</option></select>
+    </div>
+
+    <div class="results-header">
+      <h2 id="resultsTitle">All Event Centers Worldwide</h2>
+      <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+        <p class="results-count">Showing <strong id="resultCount">0</strong> venues</p>
+        <div class="view-toggle" role="tablist" aria-label="View mode">
+          <button id="viewGrid" class="active" onclick="setView('grid')" aria-label="Grid view"><i class="fa-solid fa-grip" aria-hidden="true"></i> Cards</button>
+          <button id="viewTable" onclick="setView('table')" aria-label="Table view"><i class="fa-solid fa-table" aria-hidden="true"></i> Table</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="cards-grid" id="cardsGrid" role="list"></div>
+
+    <div class="cards-table" id="cardsTable">
+      <table>
+        <thead><tr><th>Venue Name</th><th>City</th><th>Country</th><th>Phone</th><th>Tags</th></tr></thead>
+        <tbody id="cardsTableBody"></tbody>
+      </table>
+    </div>
+
+    <div class="pagination" id="pagination"></div>
+
+    <div class="no-results hidden" id="noResults" role="status" aria-live="polite">
+      <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+      <h3>No venues found</h3>
+      <p>Try adjusting your filters or search keywords.</p>
+    </div>
+  </section>
+</main>
+
+<div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onclick="if(event.target.id==='modalBackdrop') closeModal()">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close dialog"><i class="fa-solid fa-xmark"></i></button>
+      <h2 id="modalTitle">Venue Name</h2>
+      <p class="modal-loc" id="modalLocation"></p>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<section id="about" style="background:#fff;padding:60px 20px;border-top:1px solid var(--border);">
+  <div style="max-width:880px;margin:0 auto;text-align:center;">
+    <h2 style="color:var(--primary-dark);font-size:clamp(1.5rem,3vw,2rem);margin-bottom:14px;">About This Directory</h2>
+    <p style="color:var(--text-light);font-size:1.02rem;line-height:1.75;">The Global Event Centers Directory is the most comprehensive, free-to-use database of professional event venues worldwide. We list verified contact details for conference centers, exhibition halls, wedding venues, convention spaces, banquet halls and corporate event venues across Africa, North America, Europe, Asia, Oceania and South America — with strong coverage of major event hubs in Nigeria (Lagos, Abuja, Port Harcourt), Ghana (Accra, Kumasi), Kenya, South Africa and Egypt. Whether you're planning a corporate conference in Toronto, a trade exhibition in Frankfurt, a wedding in Mumbai or a product launch in Sydney, our directory connects event planners with the venue's official contact information — including phone numbers, email addresses, mailing addresses and official websites.</p>
+  </div>
+</section>
+
+<section id="add-listing" class="add-section">
+  <div class="add-inner">
+    <h2><i class="fa-solid fa-plus" aria-hidden="true"></i> Add a New Event Center</h2>
+    <p>Know a great venue not yet listed? Submit it for review and inclusion in our directory.</p>
+    <form class="add-form" id="addForm" onsubmit="submitAddForm(event)">
+      <div><label for="newName">Venue Name *</label><input type="text" id="newName" required placeholder="e.g. Grand Convention Hall"></div>
+      <div><label for="newType">Venue Type</label><select id="newType"><option>Conference Center</option><option>Wedding Venue</option><option>Exhibition Hall</option><option>Convention Center</option><option>Banquet Hall</option><option>Corporate Event Space</option><option>Multi-Purpose Venue</option></select></div>
+      <div><label for="newCountry">Country *</label><input type="text" id="newCountry" required placeholder="e.g. Nigeria"></div>
+      <div><label for="newState">State / Province</label><input type="text" id="newState" placeholder="e.g. Lagos State"></div>
+      <div><label for="newCity">City *</label><input type="text" id="newCity" required placeholder="e.g. Lagos"></div>
+      <div><label for="newPhone">Phone Number *</label><input type="tel" id="newPhone" required placeholder="+234 1 234 5678"></div>
+      <div class="full"><label for="newAddress">Full Address *</label><input type="text" id="newAddress" required placeholder="Street, postal code, city, country"></div>
+      <div><label for="newEmail">Email</label><input type="email" id="newEmail" placeholder="info@venue.com"></div>
+      <div><label for="newWebsite">Website</label><input type="url" id="newWebsite" placeholder="https://www.venue.com"></div>
+      <div class="full"><label for="newDescription">Short Description</label><textarea id="newDescription" placeholder="Briefly describe the venue, its capacity, and notable features..."></textarea></div>
+      <div class="full"><button type="submit"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Submit Listing for Review</button></div>
+      <div class="form-success" id="formSuccess"><i class="fa-solid fa-circle-check"></i><span>Thank you! Your listing has been submitted and will be reviewed within 48 hours.</span></div>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer" id="footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <a href="#" class="logo"><i class="fa-solid fa-building-columns"></i> Global Event Centers</a>
+      <p>The world's most complete directory of conference centers, wedding venues, exhibition halls and convention spaces. Verified contact details for venue planners and event organizers.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Continents</h4>
+      <ul>
+        <li><a href="#" onclick="filterByContinent('Africa');return false;">Africa</a></li>
+        <li><a href="#" onclick="filterByContinent('North America');return false;">North America</a></li>
+        <li><a href="#" onclick="filterByContinent('Europe');return false;">Europe</a></li>
+        <li><a href="#" onclick="filterByContinent('Asia');return false;">Asia</a></li>
+        <li><a href="#" onclick="filterByContinent('Oceania');return false;">Oceania</a></li>
+        <li><a href="#" onclick="filterByContinent('South America');return false;">South America</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#directory">Browse Directory</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#add-listing">Add Listing</a></li>
+        <li><a href="#" onclick="event.preventDefault();alert('Privacy policy coming soon.')">Privacy Policy</a></li>
+        <li><a href="#" onclick="event.preventDefault();alert('Terms of service coming soon.')">Terms of Service</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:support@globaleventcentersdirectory.com"><i class="fa-solid fa-envelope"></i> Email Us</a></li>
+        <li><a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
+        <li><a href="#"><i class="fa-brands fa-twitter"></i> Twitter</a></li>
+        <li><a href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; <span id="currentYear"></span> Global Event Centers Directory. All rights reserved.</p>
+    <p>Last updated: <span id="lastUpdated"></span> &middot; Built for event planners, venue managers and corporate organizers worldwide.</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ================================================================
+   ╔══════════════════════════════════════════════════════════════╗
+   ║                  EVENT CENTERS DATA                          ║
+   ╠══════════════════════════════════════════════════════════════╣
+   ║  TO ADD VENUES MANUALLY (advanced users):                    ║
+   ║   1. Copy any existing entry (from { to },)                  ║
+   ║   2. Paste it on a new line inside the [ ] brackets          ║
+   ║   3. Change the id to a unique number                        ║
+   ║   4. Edit the values; keep field names unchanged             ║
+   ║   5. Save and re-upload the file to your host                ║
+   ║                                                              ║
+   ║  Allowed continent values: "Africa", "North America",        ║
+   ║   "South America", "Europe", "Asia", "Oceania"               ║
+   ║                                                              ║
+   ║  IMPORTANT: Do NOT remove the DATA_START / DATA_END comments ║
+   ║  below — the CSV import feature uses them to find this data. ║
+   ╚══════════════════════════════════════════════════════════════╝
+================================================================ */
+
+/* DATA_START */
+const eventCenters = [
+// ===== AFRICA - NIGERIA - LAGOS =====
+  {id:1,name:"Eko Hotel & Suites Convention Centre",continent:"Africa",country:"Nigeria",state:"Lagos State",city:"Lagos",address:"1415 Adetokunbo Ademola Street, Victoria Island, Lagos, Nigeria",phone:"+234 1 277 7000",email:"reservations@ekohotels.com",website:"https://www.ekohotels.com",description:"Iconic five-star hotel and convention complex on Victoria Island with multiple ballrooms, the Convention Centre seating 6,000+ and several pre-function halls.",tags:["Convention Center","Conference Center","Wedding Venue","Banquet Hall"]},
+  {id:2,name:"Landmark Event Centre",continent:"Africa",country:"Nigeria",state:"Lagos State",city:"Lagos",address:"Plot 2 & 3 Water Corporation Road, Oniru, Victoria Island, Lagos, Nigeria",phone:"+234 1 280 0000",email:"info@landmarkafrica.com",website:"https://www.landmarkafrica.com",description:"Lagos's premier 8,000-capacity beachfront event venue, host to large concerts, exhibitions, weddings and conferences.",tags:["Event Centre","Concert Venue","Exhibition Hall","Wedding Venue"]},
+  {id:3,name:"Oriental Hotel Lagos",continent:"Africa",country:"Nigeria",state:"Lagos State",city:"Lagos",address:"3 Lekki - Epe Expressway, Victoria Island, Lagos, Nigeria",phone:"+234 1 236 6000",email:"info@orientalhotel.com.ng",website:"https://www.orientalhotel.com.ng",description:"Pagoda-styled luxury hotel with the Grand Ballroom, Imperial Hall and several conference rooms suitable for large weddings, gala events and meetings.",tags:["Wedding Venue","Conference Center","Banquet Hall","Luxury Venue"]},
+  {id:4,name:"Federal Palace Hotel & Casino",continent:"Africa",country:"Nigeria",state:"Lagos State",city:"Lagos",address:"6-8 Ahmadu Bello Way, Victoria Island, Lagos, Nigeria",phone:"+234 1 278 8800",email:"info@fphotelnigeria.com",website:"https://www.thefederalpalacehotel.com",description:"Historic Lagos hotel with the Balmoral Convention Centre, Atlantic Hall and Grand Ballroom hosting major political, corporate and social events.",tags:["Convention Center","Conference Center","Wedding Venue"]},
+  {id:5,name:"The Civic Centre Lagos",continent:"Africa",country:"Nigeria",state:"Lagos State",city:"Lagos",address:"Ozumba Mbadiwe Avenue, Victoria Island, Lagos, Nigeria",phone:"+234 1 463 0641",email:"info@civiccentrelagos.com",website:"https://www.civiccentrelagos.com",description:"Modern multi-purpose venue overlooking the lagoon with a 1,000-seat auditorium, banquet halls and meeting rooms.",tags:["Conference Center","Wedding Venue","Multi-Purpose Venue"]},
+  {id:6,name:"The Wheatbaker",continent:"Africa",country:"Nigeria",state:"Lagos State",city:"Lagos",address:"4 Onitolo (Lawrence) Road, Ikoyi, Lagos, Nigeria",phone:"+234 1 277 3560",email:"reservations@thewheatbakerhotel.com",website:"https://www.thewheatbakerhotel.com",description:"Boutique luxury hotel in Ikoyi with elegant ballrooms and conference rooms catering to high-end corporate and private events.",tags:["Conference Center","Wedding Venue","Boutique Hotel"]},
+  {id:7,name:"Sheraton Lagos Hotel",continent:"Africa",country:"Nigeria",state:"Lagos State",city:"Lagos",address:"30 Mobolaji Bank Anthony Way, Ikeja, Lagos, Nigeria",phone:"+234 1 280 6100",email:"sales.lagos@sheraton.com",website:"https://www.marriott.com",description:"Long-established Marriott property in Ikeja with the Grand Ballroom, Festival Hall and 14 meeting rooms used widely for weddings and corporate events.",tags:["Conference Center","Wedding Venue","Banquet Hall"]},
+  {id:8,name:"Radisson Blu Anchorage Hotel Lagos",continent:"Africa",country:"Nigeria",state:"Lagos State",city:"Lagos",address:"1A Ozumba Mbadiwe Avenue, Victoria Island, Lagos, Nigeria",phone:"+234 1 462 4900",email:"info.lagos@radissonblu.com",website:"https://www.radissonhotels.com",description:"Waterfront hotel on Victoria Island offering the Anchorage Ballroom and several smaller meeting venues with lagoon views.",tags:["Conference Center","Wedding Venue","Corporate Event Space"]},
+  {id:9,name:"Lagos Continental Hotel",continent:"Africa",country:"Nigeria",state:"Lagos State",city:"Lagos",address:"Plot 52A Kofo Abayomi Street, Victoria Island, Lagos, Nigeria",phone:"+234 1 236 6666",email:"info@lagoscontinental.com",website:"https://www.lagoscontinental.com",description:"Premier business hotel (formerly InterContinental Lagos) with a Grand Ballroom seating 1,000 and 16 fully equipped meeting rooms.",tags:["Conference Center","Banquet Hall","Corporate Event Space"]},
+  {id:10,name:"Four Points by Sheraton Lagos",continent:"Africa",country:"Nigeria",state:"Lagos State",city:"Lagos",address:"Plot 9/10 Block 2 Oniru Chieftaincy Estate, Victoria Island, Lagos, Nigeria",phone:"+234 1 448 8888",email:"reservations.lagos@fourpoints.com",website:"https://www.marriott.com",description:"Stylish 4-star Marriott hotel near the beach with the Sandalwood Ballroom and several executive meeting rooms.",tags:["Conference Center","Wedding Venue","Corporate Event Space"]},
+  {id:11,name:"MUSON Centre",continent:"Africa",country:"Nigeria",state:"Lagos State",city:"Lagos",address:"Onikan, Lagos Island, Lagos, Nigeria",phone:"+234 1 264 9601",email:"info@musonline.org",website:"https://www.musonline.org",description:"Cultural complex housing the Shell Hall and Agip Recital Hall, popular for concerts, weddings, conferences and award ceremonies.",tags:["Concert Venue","Conference Center","Wedding Venue"]},
+  {id:12,name:"Harbour Point Lagos",continent:"Africa",country:"Nigeria",state:"Lagos State",city:"Lagos",address:"4 Wilmot Point Road, Ahmadu Bello Way, Victoria Island, Lagos, Nigeria",phone:"+234 1 461 4000",email:"info@harbourpoint.com.ng",website:"https://www.harbourpoint.com.ng",description:"Riverside event venue and restaurant on Victoria Island with multiple halls and outdoor lawn for weddings, parties and corporate dinners.",tags:["Wedding Venue","Banquet Hall","Restaurant"]},
+  {id:13,name:"Tafawa Balewa Square",continent:"Africa",country:"Nigeria",state:"Lagos State",city:"Lagos",address:"Lagos Island, Lagos, Nigeria",phone:"+234 1 263 6700",email:"info@tbsnigeria.gov.ng",website:"",description:"Iconic public square and parade ground used for state ceremonies, large concerts, exhibitions and political rallies.",tags:["Concert Venue","Exhibition Hall","Outdoor Venue"]},
+  {id:14,name:"Welcome Centre Hotels & Conference Centre",continent:"Africa",country:"Nigeria",state:"Lagos State",city:"Lagos",address:"45/47 Mafoluku Road, Oshodi, Lagos, Nigeria",phone:"+234 1 271 1011",email:"info@welcomecentrehotels.com",website:"https://www.welcomecentrehotels.com",description:"Hotel and convention complex near Murtala Muhammed Airport with multiple banquet halls and meeting rooms used for weddings and corporate events.",tags:["Conference Center","Wedding Venue","Banquet Hall"]},
+  {id:15,name:"Renaissance Lagos Ikeja Hotel",continent:"Africa",country:"Nigeria",state:"Lagos State",city:"Lagos",address:"Plot 11 Olusegun Obasanjo Way, Isaac John Street, Ikeja GRA, Lagos, Nigeria",phone:"+234 1 277 3000",email:"reservations@renaissancelagos.com",website:"https://www.marriott.com",description:"Marriott Renaissance hotel in Ikeja GRA with stylish ballrooms and corporate meeting rooms suited for weddings, AGMs and product launches.",tags:["Conference Center","Wedding Venue","Corporate Event Space"]},
+  {id:16,name:"Crowne Plaza Lagos",continent:"Africa",country:"Nigeria",state:"Lagos State",city:"Lagos",address:"Lekki - Epe Expressway, Lekki Phase 1, Lagos, Nigeria",phone:"+234 1 422 2200",email:"reservations@cplagos.com",website:"https://www.ihg.com",description:"IHG-managed hotel on the Lekki Expressway with eight meeting rooms and a flexible ballroom for conferences and corporate banquets.",tags:["Conference Center","Corporate Event Space","Banquet Hall"]},
+  {id:17,name:"Southern Sun Ikoyi",continent:"Africa",country:"Nigeria",state:"Lagos State",city:"Lagos",address:"47 Alfred Rewane Road, Ikoyi, Lagos, Nigeria",phone:"+234 1 280 5200",email:"ssikoyi.reservations@southernsun.com",website:"https://www.tsogosun.com",description:"Upscale Ikoyi hotel with multiple flexible meeting rooms and a ballroom set within tropical gardens.",tags:["Conference Center","Wedding Venue","Boutique Hotel"]},
+  {id:18,name:"Protea Hotel by Marriott Lagos Kuramo Waters",continent:"Africa",country:"Nigeria",state:"Lagos State",city:"Lagos",address:"Plot 1085 Adetokunbo Ademola Street, Victoria Island, Lagos, Nigeria",phone:"+234 1 460 4500",email:"reservations.kuramo@proteahotels.com.ng",website:"https://www.marriott.com",description:"Boutique Marriott property on Victoria Island with intimate meeting rooms and a small banquet hall, well-suited for executive retreats.",tags:["Conference Center","Boutique Hotel","Corporate Event Space"]},
+  {id:19,name:"BlueCabana Event Centre",continent:"Africa",country:"Nigeria",state:"Lagos State",city:"Lagos",address:"Lekki Phase 1, Lagos, Nigeria",phone:"+234 803 200 2000",email:"info@bluecabana.ng",website:"",description:"Modern indoor-outdoor event venue on the Lekki Peninsula popular for upscale weddings, birthday parties and product launches.",tags:["Wedding Venue","Event Centre","Outdoor Venue"]},
+  {id:20,name:"Vista Hall Lagos",continent:"Africa",country:"Nigeria",state:"Lagos State",city:"Lagos",address:"Lekki - Epe Expressway, Lekki, Lagos, Nigeria",phone:"+234 802 311 1212",email:"bookings@vistahall.com.ng",website:"",description:"Contemporary multi-purpose hall on the Lekki corridor catering to weddings, conferences and social functions of up to 800 guests.",tags:["Wedding Venue","Banquet Hall","Multi-Purpose Venue"]},
+  {id:21,name:"The Monarch Event Centre",continent:"Africa",country:"Nigeria",state:"Lagos State",city:"Lagos",address:"6 Idowu Martins Street, Victoria Island, Lagos, Nigeria",phone:"+234 802 222 9090",email:"info@themonarcheventcentre.com",website:"",description:"Elegant event centre in the heart of Victoria Island offering full event-management services for weddings, dinners and corporate functions.",tags:["Wedding Venue","Banquet Hall","Corporate Event Space"]},
+  {id:22,name:"Top Rank Hotel Galaxy",continent:"Africa",country:"Nigeria",state:"Lagos State",city:"Lagos",address:"75 Allen Avenue, Ikeja, Lagos, Nigeria",phone:"+234 909 200 2000",email:"info@toprankhotels.com",website:"https://www.toprankhotels.com",description:"Mid-range Ikeja hotel with banqueting facilities and conference rooms used for weddings, training sessions and reunions.",tags:["Conference Center","Banquet Hall","Wedding Venue"]},
+  {id:23,name:"Bemil Continental Hotel",continent:"Africa",country:"Nigeria",state:"Lagos State",city:"Lagos",address:"Plot 16 Block 3 Babatunde Anjous Street, Lekki Phase 1, Lagos, Nigeria",phone:"+234 1 295 5300",email:"info@bemilhotel.com",website:"",description:"Lekki business hotel with two banquet halls and several meeting rooms for medium-sized weddings, training and corporate events.",tags:["Conference Center","Banquet Hall","Wedding Venue"]},
+  {id:24,name:"D'Podium International Event Centre",continent:"Africa",country:"Nigeria",state:"Lagos State",city:"Lagos",address:"Plot 2 Block A Mobolaji Bank Anthony Way, Ikeja, Lagos, Nigeria",phone:"+234 805 555 0808",email:"info@dpodium.com",website:"",description:"Large multi-purpose event hall on Mobolaji Bank Anthony Way frequently used for weddings, conventions, expos and concerts.",tags:["Event Centre","Concert Venue","Exhibition Hall"]},
+  {id:25,name:"Eko Convention Centre",continent:"Africa",country:"Nigeria",state:"Lagos State",city:"Lagos",address:"Adetokunbo Ademola Street, Victoria Island, Lagos, Nigeria",phone:"+234 1 277 7000",email:"events@ekohotels.com",website:"https://www.ekohotels.com",description:"Pillarless 6,000-capacity convention hall within the Eko Hotels complex; one of West Africa's largest indoor event spaces.",tags:["Convention Center","Exhibition Hall","Concert Venue"]},
+  {id:26,name:"Whitesands Beach Resort",continent:"Africa",country:"Nigeria",state:"Lagos State",city:"Lagos",address:"Lekki Free Trade Zone, Ibeju-Lekki, Lagos, Nigeria",phone:"+234 818 700 1100",email:"info@whitesandsresort.ng",website:"",description:"Beachfront destination venue popular for destination weddings, team-building retreats and outdoor corporate events.",tags:["Wedding Venue","Outdoor Venue","Beach Resort"]},
+  {id:27,name:"GET Arena",continent:"Africa",country:"Nigeria",state:"Lagos State",city:"Lagos",address:"Lekki - Ikoyi Link Bridge Toll Plaza, Lekki, Lagos, Nigeria",phone:"+234 700 438 2736",email:"info@getarena.com",website:"https://www.getarena.com",description:"Lifestyle and event complex offering an indoor arena, sports facilities and event halls used for concerts, parties and corporate launches.",tags:["Event Centre","Concert Venue","Sports Venue"]},
+  {id:28,name:"Balmoral Convention Centre",continent:"Africa",country:"Nigeria",state:"Lagos State",city:"Lagos",address:"6-8 Ahmadu Bello Way, Victoria Island, Lagos, Nigeria",phone:"+234 1 278 8800",email:"sales@balmoralconvention.com",website:"https://www.balmoralconvention.com",description:"Independent purpose-built convention centre adjoining the Federal Palace Hotel with multiple halls hosting trade shows, weddings and AGMs.",tags:["Convention Center","Exhibition Hall","Wedding Venue"]},
+
+  // ===== AFRICA - NIGERIA - ABUJA (FCT) =====
+  {id:29,name:"Transcorp Hilton Abuja",continent:"Africa",country:"Nigeria",state:"Federal Capital Territory",city:"Abuja",address:"1 Aguiyi Ironsi Street, Maitama, Abuja, Nigeria",phone:"+234 9 461 3000",email:"reservations.abuja@hilton.com",website:"https://www.hilton.com",description:"Nigeria's flagship Hilton with the Congress Hall (1,500 capacity), Ballroom and 18 meeting rooms; venue for many state and corporate events.",tags:["Conference Center","Convention Center","Wedding Venue","Luxury Venue"]},
+  {id:30,name:"International Conference Centre Abuja",continent:"Africa",country:"Nigeria",state:"Federal Capital Territory",city:"Abuja",address:"Herbert Macaulay Way, Central Business District, Abuja, Nigeria",phone:"+234 9 234 1100",email:"info@iccabuja.gov.ng",website:"",description:"Government-owned conference complex hosting major political, diplomatic and corporate gatherings in central Abuja.",tags:["Conference Center","Convention Center","Government Events"]},
+  {id:31,name:"Sheraton Abuja Hotel",continent:"Africa",country:"Nigeria",state:"Federal Capital Territory",city:"Abuja",address:"Ladi Kwali Street, Wuse Zone 4, Abuja, Nigeria",phone:"+234 9 461 4000",email:"sheraton.abuja@sheraton.com",website:"https://www.marriott.com",description:"Established Wuse hotel with the Ladi Kwali Hall, Congress Hall and several smaller meeting rooms used for high-profile conferences and weddings.",tags:["Conference Center","Wedding Venue","Banquet Hall"]},
+  {id:32,name:"NAF Conference Centre & Suites",continent:"Africa",country:"Nigeria",state:"Federal Capital Territory",city:"Abuja",address:"Ahmadu Bello Way, Kado, Abuja, Nigeria",phone:"+234 9 291 0500",email:"info@nafconferencecentre.com",website:"",description:"Air Force-owned hotel and conference complex with a 1,500-capacity main hall and several breakout rooms.",tags:["Conference Center","Banquet Hall","Wedding Venue"]},
+  {id:33,name:"Eagle Square Abuja",continent:"Africa",country:"Nigeria",state:"Federal Capital Territory",city:"Abuja",address:"Shehu Shagari Way, Central Business District, Abuja, Nigeria",phone:"+234 9 523 0000",email:"info@eaglesquare.gov.ng",website:"",description:"Iconic outdoor parade and event square used for presidential inaugurations, national celebrations and large public events.",tags:["Outdoor Venue","Government Events","Concert Venue"]},
+  {id:34,name:"Bolingo Hotel & Towers",continent:"Africa",country:"Nigeria",state:"Federal Capital Territory",city:"Abuja",address:"Plot 1 Pope John Paul II Crescent, Maitama, Abuja, Nigeria",phone:"+234 9 461 5000",email:"info@bolingohotels.com",website:"https://www.bolingohotels.com",description:"Maitama hotel with banqueting facilities for weddings and corporate events plus several executive meeting rooms.",tags:["Conference Center","Wedding Venue","Banquet Hall"]},
+  {id:35,name:"Yar'Adua Centre",continent:"Africa",country:"Nigeria",state:"Federal Capital Territory",city:"Abuja",address:"1 Memorial Drive, Central Business District, Abuja, Nigeria",phone:"+234 9 461 0700",email:"info@yaraduacentre.org",website:"https://www.yaraduacentre.org",description:"Modern policy-focused conference and exhibition complex with a 600-seat auditorium and several meeting rooms.",tags:["Conference Center","Exhibition Hall","Government Events"]},
+  {id:36,name:"Chida International Hotel",continent:"Africa",country:"Nigeria",state:"Federal Capital Territory",city:"Abuja",address:"224 Solomon Lar Way, Utako District, Abuja, Nigeria",phone:"+234 9 870 1100",email:"info@chidahotelabuja.com",website:"",description:"Mid-market Utako hotel widely used for political events, AGMs and weddings, with a banquet hall and several meeting rooms.",tags:["Conference Center","Wedding Venue","Banquet Hall"]},
+  {id:37,name:"Nicon Luxury Hotel Abuja",continent:"Africa",country:"Nigeria",state:"Federal Capital Territory",city:"Abuja",address:"Plot 903 Tafawa Balewa Way, Area 11, Garki, Abuja, Nigeria",phone:"+234 9 461 6000",email:"reservations@niconluxuryabuja.com",website:"",description:"Established Garki hotel with multiple banquet halls and meeting rooms catering to government, corporate and private events.",tags:["Conference Center","Wedding Venue","Banquet Hall"]},
+  {id:38,name:"Aso Hall (Aso Rock Villa)",continent:"Africa",country:"Nigeria",state:"Federal Capital Territory",city:"Abuja",address:"Aso Rock Presidential Villa, Three Arms Zone, Abuja, Nigeria",phone:"+234 9 523 0606",email:"",website:"",description:"Banquet hall within the presidential complex used for state dinners, official receptions and government meetings.",tags:["Banquet Hall","Government Events"]},
+  {id:39,name:"Fraser Suites Abuja",continent:"Africa",country:"Nigeria",state:"Federal Capital Territory",city:"Abuja",address:"294 Cadastral Zone B02, Diplomatic Drive, Wuse 2, Abuja, Nigeria",phone:"+234 9 461 7000",email:"reservations.abuja@frasershospitality.com",website:"https://abuja.frasershospitality.com",description:"Serviced apartment hotel with elegant function rooms and outdoor pool deck used for cocktails, small weddings and corporate events.",tags:["Boutique Hotel","Conference Center","Corporate Event Space"]},
+
+  // ===== AFRICA - NIGERIA - PORT HARCOURT =====
+  {id:40,name:"Hotel Presidential Port Harcourt",continent:"Africa",country:"Nigeria",state:"Rivers State",city:"Port Harcourt",address:"6 Birabi Street, Old GRA, Port Harcourt, Nigeria",phone:"+234 84 461 2000",email:"info@hotelpresidentialph.com",website:"",description:"Long-established Port Harcourt hotel with the Niger Hall and several smaller halls used for weddings, AGMs and political events.",tags:["Conference Center","Wedding Venue","Banquet Hall"]},
+  {id:41,name:"Le Méridien Ogeyi Place",continent:"Africa",country:"Nigeria",state:"Rivers State",city:"Port Harcourt",address:"Tombia Street, GRA Phase II, Port Harcourt, Nigeria",phone:"+234 84 463 9000",email:"reservations.ogeyiplace@lemeridien.com",website:"https://www.marriott.com",description:"Upscale Marriott hotel in GRA Phase II with a Grand Ballroom and several meeting rooms for corporate and social events.",tags:["Conference Center","Wedding Venue","Luxury Venue"]},
+  {id:42,name:"Atlantic Hall Port Harcourt",continent:"Africa",country:"Nigeria",state:"Rivers State",city:"Port Harcourt",address:"Plot 12 Trans-Amadi Industrial Layout, Port Harcourt, Nigeria",phone:"+234 803 311 4444",email:"info@atlantichallph.com",website:"",description:"Multi-purpose hall in the Trans-Amadi area popular for weddings, traditional ceremonies and corporate events.",tags:["Wedding Venue","Banquet Hall","Multi-Purpose Venue"]},
+  {id:43,name:"Novotel Port Harcourt",continent:"Africa",country:"Nigeria",state:"Rivers State",city:"Port Harcourt",address:"3 Stadium Road, Rumuomasi, Port Harcourt, Nigeria",phone:"+234 84 462 2000",email:"h6716@accor.com",website:"https://www.accor.com",description:"International-class Accor hotel with conference rooms and a ballroom serving the oil & gas business community.",tags:["Conference Center","Corporate Event Space","Wedding Venue"]},
+  {id:44,name:"Aztech Arcum Hotel",continent:"Africa",country:"Nigeria",state:"Rivers State",city:"Port Harcourt",address:"5 Tombia Street Extension, GRA Phase II, Port Harcourt, Nigeria",phone:"+234 84 230 0666",email:"info@aztecharcum.com",website:"",description:"Mid-market business hotel with conference and banquet facilities popular among local corporates and wedding parties.",tags:["Conference Center","Wedding Venue","Banquet Hall"]},
+
+  // ===== AFRICA - NIGERIA - IBADAN, KANO, ENUGU, BENIN =====
+  {id:45,name:"Premier Hotel Ibadan",continent:"Africa",country:"Nigeria",state:"Oyo State",city:"Ibadan",address:"Mokola Hill, Ibadan, Nigeria",phone:"+234 2 290 1010",email:"info@premierhotelibadan.com",website:"https://www.premierhotelibadan.com",description:"Historic hilltop hotel overlooking Ibadan with two ballrooms and several meeting rooms used for weddings, AGMs and conferences.",tags:["Conference Center","Wedding Venue","Banquet Hall"]},
+  {id:46,name:"Kakanfo Inn & Conference Centre",continent:"Africa",country:"Nigeria",state:"Oyo State",city:"Ibadan",address:"1 Nihinlola Street, Off Joyce B Road, Ring Road, Ibadan, Nigeria",phone:"+234 2 231 0140",email:"info@kakanfoinn.com",website:"https://www.kakanfoinn.com",description:"Established Ibadan hotel with conference halls, banquet rooms and outdoor lawns for weddings and corporate events.",tags:["Conference Center","Wedding Venue","Banquet Hall"]},
+  {id:47,name:"Tahir Guest Palace Kano",continent:"Africa",country:"Nigeria",state:"Kano State",city:"Kano",address:"4 Maiduguri Road, Nasarawa GRA, Kano, Nigeria",phone:"+234 64 632 100",email:"info@tahirguestpalace.com",website:"",description:"Leading Kano luxury hotel with multiple conference and banquet halls used for political, corporate and wedding events.",tags:["Conference Center","Wedding Venue","Luxury Venue"]},
+  {id:48,name:"Grand Central Hotel Kano",continent:"Africa",country:"Nigeria",state:"Kano State",city:"Kano",address:"Bompai Road, Kano, Nigeria",phone:"+234 64 661 010",email:"info@grandcentralkano.com",website:"",description:"Long-standing Kano hotel with banqueting facilities catering to corporate, wedding and political functions.",tags:["Conference Center","Banquet Hall","Wedding Venue"]},
+  {id:49,name:"Nike Lake Resort Enugu",continent:"Africa",country:"Nigeria",state:"Enugu State",city:"Enugu",address:"Off Abakaliki Road, Enugu, Nigeria",phone:"+234 42 251 011",email:"info@nikelakeresort.com",website:"https://www.nikelakeresort.com",description:"Lakeside resort with a 1,000-seat conference hall, banquet facilities and outdoor venues for weddings and retreats.",tags:["Conference Center","Wedding Venue","Resort"]},
+  {id:50,name:"Oakland Hotel & Conference Centre",continent:"Africa",country:"Nigeria",state:"Enugu State",city:"Enugu",address:"GRA, Enugu, Nigeria",phone:"+234 42 250 800",email:"info@oaklandenugu.com",website:"",description:"Modern Enugu business hotel offering conference rooms and a banquet hall used for weddings and corporate gatherings.",tags:["Conference Center","Wedding Venue","Banquet Hall"]},
+  {id:51,name:"Benin Plaza Hotel",continent:"Africa",country:"Nigeria",state:"Edo State",city:"Benin City",address:"Reservation Road, GRA, Benin City, Nigeria",phone:"+234 52 880 100",email:"info@beninplazahotel.com",website:"",description:"Benin City hotel with conference and banquet halls popular for weddings, AGMs and corporate retreats.",tags:["Conference Center","Wedding Venue","Banquet Hall"]},
+
+  // ===== AFRICA - GHANA - ACCRA =====
+  {id:52,name:"Accra International Conference Centre",continent:"Africa",country:"Ghana",state:"Greater Accra",city:"Accra",address:"Castle Road, Ridge, Accra, Ghana",phone:"+233 30 268 9100",email:"info@aicc.gov.gh",website:"https://www.aicc.gov.gh",description:"Ghana's flagship conference complex with a 1,600-seat main auditorium and multiple meeting rooms; venue for AU and ECOWAS events.",tags:["Convention Center","Conference Center","Government Events"]},
+  {id:53,name:"Kempinski Hotel Gold Coast City Accra",continent:"Africa",country:"Ghana",state:"Greater Accra",city:"Accra",address:"Gamel Abdul Nasser Avenue, Ridge, Accra, Ghana",phone:"+233 30 274 6000",email:"reservations.accra@kempinski.com",website:"https://www.kempinski.com",description:"Five-star hotel with a pillar-less Grand Ballroom (1,200 capacity) and 13 meeting rooms popular for high-end weddings and conferences.",tags:["Conference Center","Wedding Venue","Luxury Venue"]},
+  {id:54,name:"Mövenpick Ambassador Hotel Accra",continent:"Africa",country:"Ghana",state:"Greater Accra",city:"Accra",address:"Independence Avenue, Ridge, Accra, Ghana",phone:"+233 30 261 1000",email:"hotel.accra@movenpick.com",website:"https://www.movenpick.com",description:"Centrally located five-star hotel with a Grand Ballroom and 12 meeting rooms hosting major corporate, diplomatic and social events.",tags:["Conference Center","Wedding Venue","Luxury Venue"]},
+  {id:55,name:"Labadi Beach Hotel",continent:"Africa",country:"Ghana",state:"Greater Accra",city:"Accra",address:"1 La Bypass, La, Accra, Ghana",phone:"+233 30 277 2501",email:"reservations@labadibeachhotelgh.com",website:"https://www.labadibeachhotelgh.com",description:"Beachfront five-star hotel with the Stallion Conference Hall, Pearl Suite and outdoor lawns used for weddings and corporate retreats.",tags:["Conference Center","Wedding Venue","Beach Resort"]},
+  {id:56,name:"La Palm Royal Beach Hotel",continent:"Africa",country:"Ghana",state:"Greater Accra",city:"Accra",address:"1 La Bypass, La, Accra, Ghana",phone:"+233 30 277 1700",email:"info@gbhghana.net",website:"",description:"Beach resort hotel with a large conference centre and tropical outdoor venues popular for weddings, gala dinners and conferences.",tags:["Conference Center","Wedding Venue","Beach Resort"]},
+  {id:57,name:"Alisa Hotel Accra",continent:"Africa",country:"Ghana",state:"Greater Accra",city:"Accra",address:"21 Dr Isert Street, North Ridge, Accra, Ghana",phone:"+233 30 221 4233",email:"reservations@alisahotels.com",website:"https://www.alisahotels.com",description:"Centrally located four-star hotel with banquet halls and meeting rooms widely used for weddings and corporate events.",tags:["Conference Center","Wedding Venue","Banquet Hall"]},
+  {id:58,name:"Fiesta Royale Hotel Accra",continent:"Africa",country:"Ghana",state:"Greater Accra",city:"Accra",address:"No. 11 Liberation Link, North Dzorwulu, Accra, Ghana",phone:"+233 30 274 2000",email:"reservations@fiestaroyale.com",website:"https://www.fiestaroyale.com",description:"Boutique hotel with conference rooms, a chapel and outdoor garden popular for intimate weddings and corporate retreats.",tags:["Conference Center","Wedding Venue","Boutique Hotel"]},
+  {id:59,name:"Ghana International Trade Fair Centre",continent:"Africa",country:"Ghana",state:"Greater Accra",city:"Accra",address:"La, Accra, Ghana",phone:"+233 30 277 4541",email:"info@gtfcl.com",website:"",description:"Large outdoor and indoor exhibition complex hosting Ghana's flagship trade fairs, expos and concerts.",tags:["Exhibition Hall","Trade Shows","Outdoor Venue"]},
+
+  // ===== AFRICA - GHANA - KUMASI & TAKORADI =====
+  {id:60,name:"Lancaster Kumasi City Hotel",continent:"Africa",country:"Ghana",state:"Ashanti Region",city:"Kumasi",address:"Stadium Road, Kumasi, Ghana",phone:"+233 32 209 4555",email:"reservations@lancasterkumasi.com",website:"",description:"Modern Kumasi hotel with conference halls, a ballroom and outdoor terrace used for weddings and corporate events.",tags:["Conference Center","Wedding Venue","Banquet Hall"]},
+  {id:61,name:"Golden Tulip Kumasi City",continent:"Africa",country:"Ghana",state:"Ashanti Region",city:"Kumasi",address:"Rain Tree Street, Off Lake Road, Kumasi, Ghana",phone:"+233 32 208 3777",email:"info@goldentulipkumasicity.com",website:"https://www.goldentulipkumasicity.com",description:"International-class Kumasi hotel with conference rooms and a ballroom hosting weddings, AGMs and product launches.",tags:["Conference Center","Wedding Venue","Banquet Hall"]},
+  {id:62,name:"Kumasi City Mall Conference Hall",continent:"Africa",country:"Ghana",state:"Ashanti Region",city:"Kumasi",address:"Asokwa Interchange, Kumasi, Ghana",phone:"+233 32 209 9000",email:"info@kumasicitymall.com",website:"",description:"Modern conference and event facility within the Kumasi City Mall complex hosting expos, workshops and product launches.",tags:["Conference Center","Exhibition Hall"]},
+  {id:63,name:"Atlantic Hotel Takoradi",continent:"Africa",country:"Ghana",state:"Western Region",city:"Takoradi",address:"7 Liberation Road, Takoradi, Ghana",phone:"+233 31 202 2880",email:"info@atlantichoteltakoradi.com",website:"",description:"Long-established Takoradi hotel with conference and banqueting facilities serving the oil-and-gas business community.",tags:["Conference Center","Wedding Venue","Banquet Hall"]},
+
+  // ===== AFRICA - KENYA - NAIROBI =====
+  {id:64,name:"Kenyatta International Convention Centre",continent:"Africa",country:"Kenya",state:"Nairobi County",city:"Nairobi",address:"Harambee Avenue, Nairobi CBD, Kenya",phone:"+254 20 326 1000",email:"info@kicc.co.ke",website:"https://www.kicc.co.ke",description:"Iconic 28-storey landmark housing Kenya's largest convention venue with a 5,000-seat plenary hall and multiple meeting rooms.",tags:["Convention Center","Conference Center","Government Events"]},
+  {id:65,name:"Sarit Centre Expo Centre",continent:"Africa",country:"Kenya",state:"Nairobi County",city:"Nairobi",address:"Sarit Centre, Westlands, Nairobi, Kenya",phone:"+254 20 374 7408",email:"info@saritexpocentre.com",website:"https://www.saritexpocentre.com",description:"Westlands exhibition and conference facility hosting major Kenyan trade fairs, expos and corporate events.",tags:["Exhibition Hall","Conference Center","Trade Shows"]},
+  {id:66,name:"Visa Oshwal Centre",continent:"Africa",country:"Kenya",state:"Nairobi County",city:"Nairobi",address:"Westlands, Nairobi, Kenya",phone:"+254 20 374 1000",email:"info@oshwalcentre.com",website:"",description:"Community auditorium and exhibition complex in Westlands frequently used for weddings, conferences and cultural events.",tags:["Conference Center","Wedding Venue","Multi-Purpose Venue"]},
+  {id:67,name:"Safari Park Hotel & Casino",continent:"Africa",country:"Kenya",state:"Nairobi County",city:"Nairobi",address:"Thika Road, Kasarani, Nairobi, Kenya",phone:"+254 20 363 3000",email:"reservations@safaripark-hotel.com",website:"https://www.safaripark-hotel.com",description:"Resort-style hotel with the Jambo Conference Centre seating 1,500 plus several smaller halls and outdoor gardens.",tags:["Conference Center","Wedding Venue","Resort"]},
+  {id:68,name:"Villa Rosa Kempinski Nairobi",continent:"Africa",country:"Kenya",state:"Nairobi County",city:"Nairobi",address:"Chiromo Road, Westlands, Nairobi, Kenya",phone:"+254 20 226 9000",email:"reservations.nairobi@kempinski.com",website:"https://www.kempinski.com",description:"Five-star Westlands hotel with the Salon Rosé Ballroom and ten meeting rooms popular for executive conferences and luxury weddings.",tags:["Conference Center","Wedding Venue","Luxury Venue"]},
+  {id:69,name:"The Stanley Hotel Nairobi",continent:"Africa",country:"Kenya",state:"Nairobi County",city:"Nairobi",address:"Kenyatta Avenue, Nairobi CBD, Kenya",phone:"+254 20 275 7000",email:"info@sarovahotels.com",website:"https://www.sarovahotels.com",description:"Historic Sarova hotel in the CBD with multiple meeting rooms and a Grand Ballroom used for corporate and political events.",tags:["Conference Center","Wedding Venue","Boutique Hotel"]},
+  {id:70,name:"Radisson Blu Hotel Nairobi Upper Hill",continent:"Africa",country:"Kenya",state:"Nairobi County",city:"Nairobi",address:"Elliot Avenue, Off Upper Hill Road, Nairobi, Kenya",phone:"+254 20 264 0000",email:"info.nairobi@radissonblu.com",website:"https://www.radissonhotels.com",description:"Modern five-star hotel in Upper Hill with eleven meeting rooms and a ballroom catering to high-end corporate events.",tags:["Conference Center","Corporate Event Space","Luxury Venue"]},
+
+  // ===== AFRICA - KENYA - MOMBASA =====
+  {id:71,name:"PrideInn Paradise Beach Resort & Conference",continent:"Africa",country:"Kenya",state:"Mombasa County",city:"Mombasa",address:"Shanzu Beach, Mombasa-Malindi Road, Mombasa, Kenya",phone:"+254 41 555 5000",email:"reservations@prideinn.co.ke",website:"https://www.prideinnhotels.com",description:"Beach resort with East Africa's largest beachfront conference centre seating 2,000+, alongside ballrooms and outdoor lawns.",tags:["Conference Center","Wedding Venue","Beach Resort"]},
+  {id:72,name:"Sarova Whitesands Beach Resort & Spa",continent:"Africa",country:"Kenya",state:"Mombasa County",city:"Mombasa",address:"Bamburi Beach, Mombasa, Kenya",phone:"+254 41 548 5926",email:"info@sarovahotels.com",website:"https://www.sarovahotels.com",description:"Bamburi Beach five-star resort with multiple conference halls, a chapel and outdoor venues for destination weddings and retreats.",tags:["Conference Center","Wedding Venue","Beach Resort"]},
+
+  // ===== AFRICA - SOUTH AFRICA =====
+  {id:73,name:"Sandton Convention Centre",continent:"Africa",country:"South Africa",state:"Gauteng",city:"Johannesburg",address:"161 Maude Street, Sandton, Johannesburg 2196, South Africa",phone:"+27 11 779 0000",email:"info@saconvention.co.za",website:"https://www.saconvention.co.za",description:"Africa's leading purpose-built convention centre with 22,000 sq m of multi-level event space in the heart of Sandton.",tags:["Convention Center","Conference Center","Exhibition Hall"]},
+  {id:74,name:"Gallagher Convention Centre",continent:"Africa",country:"South Africa",state:"Gauteng",city:"Midrand",address:"19 Richards Drive, Halfway House, Midrand 1685, South Africa",phone:"+27 11 266 3000",email:"info@gallagher.co.za",website:"https://www.gallagher.co.za",description:"Gauteng's largest privately owned exhibition and conference complex with multiple halls hosting trade shows, expos and weddings.",tags:["Convention Center","Exhibition Hall","Trade Shows"]},
+  {id:75,name:"Emperors Palace Hotel & Convention Resort",continent:"Africa",country:"South Africa",state:"Gauteng",city:"Johannesburg",address:"64 Jones Road, Kempton Park, Johannesburg 1620, South Africa",phone:"+27 11 928 1000",email:"info@emperorspalace.com",website:"https://www.emperorspalace.com",description:"Resort and casino complex near OR Tambo Airport with a 6,500-capacity arena, multiple ballrooms and conference centre.",tags:["Convention Center","Concert Venue","Banquet Hall"]},
+  {id:76,name:"Birchwood Hotel & OR Tambo Conference Centre",continent:"Africa",country:"South Africa",state:"Gauteng",city:"Johannesburg",address:"Viewpoint Road, Bartlett, Boksburg 1459, South Africa",phone:"+27 11 897 0000",email:"reservations@birchwoodhotel.co.za",website:"https://www.birchwoodhotel.co.za",description:"Africa's largest hotel and conference centre with 75 conference rooms and capacity for 4,500 delegates near OR Tambo.",tags:["Conference Center","Convention Center","Banquet Hall"]},
+  {id:77,name:"Inkosi Albert Luthuli ICC Durban",continent:"Africa",country:"South Africa",state:"KwaZulu-Natal",city:"Durban",address:"45 Bram Fischer Road, Durban 4001, South Africa",phone:"+27 31 360 1000",email:"info@icc.co.za",website:"https://www.icc.co.za",description:"Award-winning purpose-built convention centre with the Durban ICC Arena, hosting global summits, expos and concerts.",tags:["Convention Center","Conference Center","Exhibition Hall"]},
+  {id:78,name:"Suncoast Casino & Entertainment World",continent:"Africa",country:"South Africa",state:"KwaZulu-Natal",city:"Durban",address:"20 Suncoast Boulevard, Marine Parade, Durban 4001, South Africa",phone:"+27 31 328 3000",email:"events@suncoastcasino.co.za",website:"https://www.suncoastcasino.co.za",description:"Beachfront entertainment complex with conference facilities, banquet halls and concert venues.",tags:["Concert Venue","Banquet Hall","Casino Resort"]},
+  {id:79,name:"CSIR International Convention Centre",continent:"Africa",country:"South Africa",state:"Gauteng",city:"Pretoria",address:"Meiring Naudé Road, Brummeria, Pretoria 0184, South Africa",phone:"+27 12 841 2000",email:"icc@csir.co.za",website:"https://www.csiricc.co.za",description:"Government-aligned conference centre with 25 venues hosting policy summits, scientific congresses and corporate events.",tags:["Conference Center","Convention Center","Government Events"]},
+  {id:80,name:"Century City Conference Centre",continent:"Africa",country:"South Africa",state:"Western Cape",city:"Cape Town",address:"4 Energy Lane, Bridgeways Precinct, Century City, Cape Town 7441, South Africa",phone:"+27 21 204 8000",email:"info@ccconferencecentre.co.za",website:"https://www.ccconferencecentre.co.za",description:"Modern conference and exhibition centre with 20 venues seating up to 900 delegates plus an attached hotel.",tags:["Conference Center","Exhibition Hall","Corporate Event Space"]},
+  {id:81,name:"Lord Charles Hotel",continent:"Africa",country:"South Africa",state:"Western Cape",city:"Cape Town",address:"1 Broadway Boulevard, Somerset West, Cape Town 7130, South Africa",phone:"+27 21 855 1040",email:"reservations@lordcharles.co.za",website:"",description:"Country-style hotel near Cape Town with multiple conference rooms and gardens popular for weddings and corporate retreats.",tags:["Conference Center","Wedding Venue","Boutique Hotel"]},
+
+  // ===== AFRICA - EGYPT =====
+  {id:82,name:"Cairo International Convention & Exhibition Centre",continent:"Africa",country:"Egypt",state:"Cairo Governorate",city:"Cairo",address:"El-Nasr Road, Nasr City, Cairo 11756, Egypt",phone:"+20 2 2263 4641",email:"info@cicc.egypt.com",website:"http://www.cicc.egypt.com",description:"Egypt's premier conference and exhibition facility offering 58,000 sq m of multi-purpose space, hosting the Cairo International Book Fair.",tags:["Convention Center","Exhibition Hall","Conference Center"]},
+  {id:83,name:"Egypt International Exhibition Center",continent:"Africa",country:"Egypt",state:"Cairo Governorate",city:"Cairo",address:"New Cairo, Fifth Settlement, Cairo, Egypt",phone:"+20 2 2754 4444",email:"info@eiec-egypt.com",website:"https://www.eiec-egypt.com",description:"Major modern exhibition complex in New Cairo with five large halls hosting Egypt's largest trade fairs and consumer expos.",tags:["Exhibition Hall","Trade Shows","Convention Center"]},
+  {id:84,name:"InterContinental Citystars Cairo",continent:"Africa",country:"Egypt",state:"Cairo Governorate",city:"Cairo",address:"Omar Ibn El-Khattab Street, Heliopolis, Cairo 11737, Egypt",phone:"+20 2 2480 0100",email:"cairocs.reservations@ihg.com",website:"https://www.ihg.com",description:"Five-star Heliopolis hotel with a Grand Ballroom and 27 meeting rooms hosting weddings, corporate events and AGMs.",tags:["Conference Center","Wedding Venue","Luxury Venue"]},
+  {id:85,name:"Bibliotheca Alexandrina Conference Centre",continent:"Africa",country:"Egypt",state:"Alexandria Governorate",city:"Alexandria",address:"El Shatby, Alexandria 21526, Egypt",phone:"+20 3 483 9999",email:"info@bibalex.org",website:"https://www.bibalex.org",description:"Iconic library with a 1,700-seat main conference hall, smaller meeting rooms and exhibition halls overlooking the Mediterranean.",tags:["Conference Center","Cultural Venue","Government Events"]},
+
+  // ===== NORTH AMERICA - USA =====
+  {id:86,name:"Javits Center",continent:"North America",country:"United States",state:"New York",city:"New York City",address:"429 11th Avenue, New York, NY 10001, USA",phone:"+1 212-216-2000",email:"info@javitscenter.com",website:"https://www.javitscenter.com",description:"Iconic 3.3 million sq ft convention center on Manhattan's West Side, hosting major trade shows, conferences and exhibitions.",tags:["Convention Center","Exhibition Hall","Conference Center"]},
+  {id:87,name:"Moscone Center",continent:"North America",country:"United States",state:"California",city:"San Francisco",address:"747 Howard Street, San Francisco, CA 94103, USA",phone:"+1 415-974-4000",email:"info@moscone.com",website:"https://www.moscone.com",description:"San Francisco's premier convention and exhibition complex, home to major tech conferences and developer events.",tags:["Convention Center","Conference Center","Tech Events"]},
+  {id:88,name:"McCormick Place",continent:"North America",country:"United States",state:"Illinois",city:"Chicago",address:"2301 S King Drive, Chicago, IL 60616, USA",phone:"+1 312-791-7000",email:"info@mccormickplace.com",website:"https://www.mccormickplace.com",description:"The largest convention center in North America with 2.6 million sq ft of exhibit space across four buildings on Lake Michigan.",tags:["Convention Center","Exhibition Hall","Trade Shows"]},
+  {id:89,name:"Los Angeles Convention Center",continent:"North America",country:"United States",state:"California",city:"Los Angeles",address:"1201 S Figueroa Street, Los Angeles, CA 90015, USA",phone:"+1 213-741-1151",email:"info@lacclink.com",website:"https://www.lacclink.com",description:"Award-winning 720,000 sq ft venue in downtown LA hosting major conventions, trade shows and entertainment events.",tags:["Convention Center","Exhibition Hall","Corporate Event Space"]},
+  {id:90,name:"Walter E. Washington Convention Center",continent:"North America",country:"United States",state:"District of Columbia",city:"Washington",address:"801 Mt Vernon Place NW, Washington, DC 20001, USA",phone:"+1 202-249-3000",email:"info@eventsdc.com",website:"https://eventsdc.com",description:"Premier 2.3 million sq ft convention facility in the heart of the nation's capital, hosting government and corporate events.",tags:["Convention Center","Conference Center","Government Events"]},
+  {id:91,name:"Orange County Convention Center",continent:"North America",country:"United States",state:"Florida",city:"Orlando",address:"9800 International Drive, Orlando, FL 32819, USA",phone:"+1 407-685-9800",email:"occcinfo@occc.net",website:"https://www.occc.net",description:"The second-largest convention center in the USA with 7 million sq ft of total space in Orlando's tourism district.",tags:["Convention Center","Exhibition Hall","Trade Shows"]},
+  {id:92,name:"Georgia World Congress Center",continent:"North America",country:"United States",state:"Georgia",city:"Atlanta",address:"285 Andrew Young International Blvd NW, Atlanta, GA 30313, USA",phone:"+1 404-223-4000",email:"info@gwcca.org",website:"https://www.gwcca.org",description:"One of the largest convention centers in the USA with 3.9 million sq ft hosting trade shows, conventions and sports events.",tags:["Convention Center","Exhibition Hall","Trade Shows"]},
+  {id:93,name:"Kay Bailey Hutchison Convention Center Dallas",continent:"North America",country:"United States",state:"Texas",city:"Dallas",address:"650 South Griffin Street, Dallas, TX 75202, USA",phone:"+1 214-939-2700",email:"info@kbhccd.com",website:"https://www.kbhccd.com",description:"Major Texas convention venue with 1 million sq ft of exhibit space hosting national trade shows and conventions.",tags:["Convention Center","Exhibition Hall","Conference Center"]},
+
+  // ===== NORTH AMERICA - CANADA =====
+  {id:94,name:"Metro Toronto Convention Centre",continent:"North America",country:"Canada",state:"Ontario",city:"Toronto",address:"255 Front Street W, Toronto, ON M5V 2W6, Canada",phone:"+1 416-585-8000",email:"info@mtccc.com",website:"https://www.mtccc.com",description:"Canada's #1 convention venue with over 600,000 sq ft of exhibit and meeting space in downtown Toronto.",tags:["Convention Center","Conference Center","Corporate Event Space"]},
+  {id:95,name:"Palais des congrès de Montréal",continent:"North America",country:"Canada",state:"Quebec",city:"Montreal",address:"1001 Place Jean-Paul-Riopelle, Montréal, QC H2Z 1H5, Canada",phone:"+1 514-871-8122",email:"info@congresmtl.com",website:"https://congresmtl.com",description:"Iconic bilingual convention centre in downtown Montreal known for its colorful glass facade and 65,000+ sq m of versatile event space.",tags:["Convention Center","Conference Center","Multi-Purpose Venue"]},
+  {id:96,name:"Calgary TELUS Convention Centre",continent:"North America",country:"Canada",state:"Alberta",city:"Calgary",address:"120 9 Avenue SE, Calgary, AB T2G 0P3, Canada",phone:"+1 403-261-8500",email:"info@calgary-convention.com",website:"https://www.calgary-convention.com",description:"A leading event center in Calgary Alberta with 122,000 sq ft of meeting and exhibition space in the city's downtown core.",tags:["Convention Center","Conference Center","Corporate Event Space"]},
+  {id:97,name:"Vancouver Convention Centre",continent:"North America",country:"Canada",state:"British Columbia",city:"Vancouver",address:"1055 Canada Place, Vancouver, BC V6C 0C3, Canada",phone:"+1 604-689-8232",email:"info@vancouverconventioncentre.com",website:"https://www.vancouverconventioncentre.com",description:"Award-winning waterfront convention facility with stunning mountain and harbour views, featuring 466,500 sq ft of meeting space.",tags:["Convention Center","Wedding Venue","Conference Center"]},
+  {id:98,name:"Edmonton Convention Centre",continent:"North America",country:"Canada",state:"Alberta",city:"Edmonton",address:"9797 Jasper Avenue, Edmonton, AB T5J 1N9, Canada",phone:"+1 780-421-9797",email:"info@edmontonconventioncentre.com",website:"https://www.edmontonconventioncentre.com",description:"Striking riverside venue with 150,000 sq ft of event space across multiple terraced levels overlooking the river valley.",tags:["Convention Center","Conference Center","Wedding Venue"]},
+  {id:99,name:"Shaw Centre Ottawa",continent:"North America",country:"Canada",state:"Ontario",city:"Ottawa",address:"55 Colonel By Drive, Ottawa, ON K1N 9J2, Canada",phone:"+1 613-563-1984",email:"info@shaw-centre.com",website:"https://www.shaw-centre.com",description:"Modern convention centre in downtown Ottawa with 192,000 sq ft of LEED-certified event space overlooking the Rideau Canal.",tags:["Convention Center","Conference Center","Government Events"]},
+
+  // ===== EUROPE =====
+  {id:100,name:"ExCeL London",continent:"Europe",country:"United Kingdom",state:"England",city:"London",address:"Royal Victoria Dock, 1 Western Gateway, London E16 1XL, UK",phone:"+44 20 7069 5000",email:"info@excel.london",website:"https://www.excel.london",description:"London's leading exhibition and convention venue with 100,000 sq m of versatile space in the Royal Docks.",tags:["Exhibition Hall","Convention Center","Conference Center"]},
+  {id:101,name:"Manchester Central",continent:"Europe",country:"United Kingdom",state:"England",city:"Manchester",address:"Petersfield, Manchester M2 3GX, UK",phone:"+44 161 834 2700",email:"info@manchestercentral.co.uk",website:"https://www.manchestercentral.co.uk",description:"Iconic Grade II listed venue offering 23,000 sq m of flexible event space across multiple halls.",tags:["Conference Center","Exhibition Hall","Multi-Purpose Venue"]},
+  {id:102,name:"SEC Glasgow",continent:"Europe",country:"United Kingdom",state:"Scotland",city:"Glasgow",address:"Exhibition Way, Glasgow G3 8YW, UK",phone:"+44 141 248 3000",email:"info@sec.co.uk",website:"https://www.sec.co.uk",description:"Scotland's premier event campus comprising the SEC Centre, SEC Armadillo and OVO Hydro arena on the River Clyde.",tags:["Convention Center","Exhibition Hall","Concert Venue"]},
+  {id:103,name:"ICC Birmingham",continent:"Europe",country:"United Kingdom",state:"England",city:"Birmingham",address:"8 Centenary Square, Broad Street, Birmingham B1 2EA, UK",phone:"+44 121 200 2000",email:"info@theicc.co.uk",website:"https://www.theicc.co.uk",description:"Award-winning city-centre conference centre with 10 halls and a 2,200-seat symphony hall.",tags:["Conference Center","Concert Venue","Convention Center"]},
+  {id:104,name:"Messe Frankfurt",continent:"Europe",country:"Germany",state:"Hesse",city:"Frankfurt",address:"Ludwig-Erhard-Anlage 1, 60327 Frankfurt am Main, Germany",phone:"+49 69 7575-0",email:"info@messefrankfurt.com",website:"https://www.messefrankfurt.com",description:"One of the world's largest trade fair organisers with a 592,127 sq m exhibition ground hosting 150+ trade shows annually.",tags:["Exhibition Hall","Trade Shows","Convention Center"]},
+  {id:105,name:"Messe Berlin",continent:"Europe",country:"Germany",state:"Berlin",city:"Berlin",address:"Messedamm 22, 14055 Berlin, Germany",phone:"+49 30 3038-0",email:"central@messe-berlin.de",website:"https://www.messe-berlin.com",description:"Historic exhibition grounds covering 160,000 sq m, hosting global events including IFA, ITB Berlin and Fruit Logistica.",tags:["Exhibition Hall","Trade Shows","Conference Center"]},
+  {id:106,name:"Paris Expo Porte de Versailles",continent:"Europe",country:"France",state:"Île-de-France",city:"Paris",address:"1 Place de la Porte de Versailles, 75015 Paris, France",phone:"+33 1 72 72 17 00",email:"contact@viparis.com",website:"https://en.parisexpoportedeversailles.com",description:"France's largest exhibition centre with 220,000 sq m of indoor space, hosting flagship events such as the Paris Motor Show.",tags:["Exhibition Hall","Convention Center","Trade Shows"]},
+  {id:107,name:"Fira Barcelona",continent:"Europe",country:"Spain",state:"Catalonia",city:"Barcelona",address:"Av. Reina M. Cristina, s/n, 08004 Barcelona, Spain",phone:"+34 932 332 000",email:"info@firabarcelona.com",website:"https://www.firabarcelona.com",description:"Leading European trade fair institution operating two large venues totalling 400,000 sq m, host of Mobile World Congress.",tags:["Exhibition Hall","Convention Center","Trade Shows"]},
+  {id:108,name:"RAI Amsterdam",continent:"Europe",country:"Netherlands",state:"North Holland",city:"Amsterdam",address:"Europaplein 24, 1078 GZ Amsterdam, Netherlands",phone:"+31 20 549 1212",email:"info@rai.nl",website:"https://www.rai.nl",description:"International exhibition and convention centre with 112,000 sq m hosting major trade fairs and corporate events.",tags:["Exhibition Hall","Convention Center","Conference Center"]},
+
+  // ===== ASIA =====
+  {id:109,name:"Bombay Exhibition Centre",continent:"Asia",country:"India",state:"Maharashtra",city:"Mumbai",address:"Western Express Highway, Goregaon East, Mumbai 400063, India",phone:"+91 22 6172 7272",email:"info@nesco.in",website:"https://www.nesco.in",description:"Mumbai's largest exhibition complex with seven climate-controlled halls totalling 70,000 sq m.",tags:["Exhibition Hall","Trade Shows","Convention Center"]},
+  {id:110,name:"Pragati Maidan (Bharat Mandapam)",continent:"Asia",country:"India",state:"Delhi",city:"New Delhi",address:"Pragati Maidan, Mathura Road, New Delhi 110001, India",phone:"+91 11 2337 1540",email:"info@indiatradefair.com",website:"https://www.indiatradefair.com",description:"India's flagship convention and exhibition complex, recently redeveloped as Bharat Mandapam, hosting G20 and global summits.",tags:["Convention Center","Exhibition Hall","Government Events"]},
+  {id:111,name:"Bangalore International Exhibition Centre",continent:"Asia",country:"India",state:"Karnataka",city:"Bangalore",address:"10th Mile, Tumkur Road, Bangalore 562123, India",phone:"+91 80 6624 6600",email:"info@biec.in",website:"https://www.biec.in",description:"South India's largest purpose-built exhibition center spread across 50 acres with five fully equipped exhibition halls.",tags:["Exhibition Hall","Conference Center","Trade Shows"]},
+  {id:112,name:"HITEX Exhibition Centre Hyderabad",continent:"Asia",country:"India",state:"Telangana",city:"Hyderabad",address:"Izzathnagar, Hyderabad 500084, India",phone:"+91 40 2311 2121",email:"info@hitex.co.in",website:"https://www.hitex.co.in",description:"Major Hyderabad exhibition complex with three indoor halls and outdoor space hosting tech, manufacturing and consumer expos.",tags:["Exhibition Hall","Trade Shows","Convention Center"]},
+  {id:113,name:"Tokyo Big Sight",continent:"Asia",country:"Japan",state:"Tokyo",city:"Tokyo",address:"3-11-1 Ariake, Koto City, Tokyo 135-0063, Japan",phone:"+81 3-5530-1111",email:"info@bigsight.jp",website:"https://www.bigsight.jp",description:"Japan's largest convention and exhibition center, recognizable for its inverted pyramid Conference Tower in Tokyo Bay.",tags:["Convention Center","Exhibition Hall","Conference Center"]},
+  {id:114,name:"Marina Bay Sands Expo & Convention Centre",continent:"Asia",country:"Singapore",state:"Central Region",city:"Singapore",address:"10 Bayfront Avenue, Singapore 018956",phone:"+65 6688 8826",email:"events@marinabaysands.com",website:"https://www.marinabaysands.com",description:"Asia's leading MICE venue with 120,000 sq m of premium event space, integrated with the Marina Bay Sands resort.",tags:["Convention Center","Conference Center","Luxury Venue"]},
+  {id:115,name:"Dubai World Trade Centre",continent:"Asia",country:"United Arab Emirates",state:"Dubai",city:"Dubai",address:"Sheikh Zayed Road, Dubai, UAE",phone:"+971 4 308 6888",email:"info@dwtc.com",website:"https://www.dwtc.com",description:"The Middle East's leading events venue with 22 halls and 56 meeting rooms hosting GITEX, Arab Health and 500+ events annually.",tags:["Convention Center","Exhibition Hall","Trade Shows"]},
+  {id:116,name:"KLCC Convention Centre",continent:"Asia",country:"Malaysia",state:"Federal Territory",city:"Kuala Lumpur",address:"Kuala Lumpur City Centre, 50088 Kuala Lumpur, Malaysia",phone:"+60 3-2333 2888",email:"sales@klccconventioncentre.com",website:"https://www.klccconventioncentre.com",description:"Modern convention centre at the foot of the Petronas Towers with 30,000 sq m of flexible event space.",tags:["Convention Center","Conference Center","Exhibition Hall"]},
+
+  // ===== OCEANIA =====
+  {id:117,name:"International Convention Centre Sydney",continent:"Oceania",country:"Australia",state:"New South Wales",city:"Sydney",address:"14 Darling Drive, Sydney NSW 2000, Australia",phone:"+61 2 9215 7100",email:"info@iccsydney.com",website:"https://www.iccsydney.com.au",description:"Australia's premier integrated convention, exhibition and entertainment precinct in Darling Harbour.",tags:["Convention Center","Exhibition Hall","Concert Venue"]},
+  {id:118,name:"Melbourne Convention and Exhibition Centre",continent:"Oceania",country:"Australia",state:"Victoria",city:"Melbourne",address:"1 Convention Centre Place, South Wharf VIC 3006, Australia",phone:"+61 3 9235 8000",email:"info@mcec.com.au",website:"https://mcec.com.au",description:"The largest event space in Australia with 70,000 sq m on the Yarra River, with award-winning sustainability credentials.",tags:["Convention Center","Exhibition Hall","Wedding Venue"]},
+  {id:119,name:"Brisbane Convention & Exhibition Centre",continent:"Oceania",country:"Australia",state:"Queensland",city:"Brisbane",address:"Cnr Merivale & Glenelg Streets, South Brisbane QLD 4101, Australia",phone:"+61 7 3308 3000",email:"events@bcec.com.au",website:"https://www.bcec.com.au",description:"Located in Brisbane's South Bank cultural precinct, this multi-award-winning venue hosts conferences, exhibitions and gala events.",tags:["Convention Center","Conference Center","Banquet Hall"]},
+  {id:120,name:"Perth Convention and Exhibition Centre",continent:"Oceania",country:"Australia",state:"Western Australia",city:"Perth",address:"21 Mounts Bay Road, Perth WA 6000, Australia",phone:"+61 8 9338 0300",email:"info@pcec.com.au",website:"https://www.pcec.com.au",description:"Riverside venue in central Perth with 18,000 sq m of dedicated event space hosting trade shows and conferences.",tags:["Convention Center","Exhibition Hall","Conference Center"]},
+  {id:121,name:"Aotea Centre Auckland",continent:"Oceania",country:"New Zealand",state:"Auckland",city:"Auckland",address:"50 Mayoral Drive, Aotea Square, Auckland 1010, New Zealand",phone:"+64 9 309 2677",email:"info@aucklandlive.co.nz",website:"https://www.aucklandlive.co.nz",description:"Multi-venue performing arts and conference complex with the ASB Theatre seating 2,300, plus several function rooms.",tags:["Concert Venue","Conference Center","Wedding Venue"]},
+
+  // ===== SOUTH AMERICA =====
+  {id:122,name:"Riocentro Convention Center",continent:"South America",country:"Brazil",state:"Rio de Janeiro",city:"Rio de Janeiro",address:"Av. Salvador Allende 6555, Barra da Tijuca, Rio de Janeiro 22783-127, Brazil",phone:"+55 21 3035-9100",email:"comercial@riocentro.com.br",website:"https://www.riocentro.com.br",description:"Latin America's largest event complex with 87,000 sq m of total area, host of Rock in Rio and the 2016 Olympic events.",tags:["Convention Center","Exhibition Hall","Concert Venue"]},
+  {id:123,name:"Expo Center Norte São Paulo",continent:"South America",country:"Brazil",state:"São Paulo",city:"São Paulo",address:"R. José Bernardo Pinto, 333, Vila Guilherme, São Paulo 02055-000, Brazil",phone:"+55 11 2236-3000",email:"info@expocenternorte.com.br",website:"https://www.expocenternorte.com.br",description:"Major São Paulo exhibition complex with 90,000 sq m hosting Brazil's largest trade fairs and corporate events.",tags:["Exhibition Hall","Trade Shows","Convention Center"]},
+  {id:124,name:"La Rural Predio Ferial",continent:"South America",country:"Argentina",state:"Buenos Aires",city:"Buenos Aires",address:"Av. Sarmiento 2704, C1425 CABA, Buenos Aires, Argentina",phone:"+54 11 4777-5500",email:"info@larural.com.ar",website:"https://www.larural.com.ar",description:"Historic exhibition complex in Palermo with 45,000 sq m of indoor and outdoor space hosting Argentina's flagship trade fairs.",tags:["Exhibition Hall","Convention Center","Trade Shows"]},
+  {id:125,name:"Centro de Convenciones de Cartagena",continent:"South America",country:"Colombia",state:"Bolívar",city:"Cartagena",address:"Calle 24 #8A-344, Centro Histórico, Cartagena, Colombia",phone:"+57 605 654 4000",email:"info@cccartagena.com",website:"https://www.cccartagena.com",description:"Convention centre on the Caribbean coast with 8,000 sq m of event space, host of Latin American summits and corporate events.",tags:["Convention Center","Conference Center","Exhibition Hall"]}
+];
+/* DATA_END */
+
+/* ================================================================
+   END OF DATA - Application logic below
+================================================================ */
+
+// Country -> Continent mapping for CSV imports without continent column
+const COUNTRY_CONTINENT = {
+  "Nigeria":"Africa","Ghana":"Africa","Kenya":"Africa","South Africa":"Africa","Egypt":"Africa",
+  "Morocco":"Africa","Tunisia":"Africa","Ethiopia":"Africa","Uganda":"Africa","Tanzania":"Africa",
+  "Rwanda":"Africa","Senegal":"Africa","Ivory Coast":"Africa","Cameroon":"Africa","Zimbabwe":"Africa",
+  "Botswana":"Africa","Namibia":"Africa","Zambia":"Africa","Algeria":"Africa","Angola":"Africa",
+  "United States":"North America","USA":"North America","Canada":"North America","Mexico":"North America",
+  "United Kingdom":"Europe","UK":"Europe","Germany":"Europe","France":"Europe","Spain":"Europe",
+  "Italy":"Europe","Netherlands":"Europe","Belgium":"Europe","Switzerland":"Europe","Austria":"Europe",
+  "Portugal":"Europe","Ireland":"Europe","Sweden":"Europe","Norway":"Europe","Denmark":"Europe",
+  "Finland":"Europe","Poland":"Europe","Greece":"Europe","Czech Republic":"Europe","Hungary":"Europe",
+  "India":"Asia","Japan":"Asia","China":"Asia","Singapore":"Asia","Malaysia":"Asia","Thailand":"Asia",
+  "Indonesia":"Asia","Philippines":"Asia","Vietnam":"Asia","South Korea":"Asia","Hong Kong":"Asia",
+  "United Arab Emirates":"Asia","UAE":"Asia","Saudi Arabia":"Asia","Qatar":"Asia","Israel":"Asia",
+  "Turkey":"Asia","Pakistan":"Asia","Bangladesh":"Asia","Sri Lanka":"Asia",
+  "Australia":"Oceania","New Zealand":"Oceania","Fiji":"Oceania",
+  "Brazil":"South America","Argentina":"South America","Chile":"South America","Colombia":"South America",
+  "Peru":"South America","Venezuela":"South America","Ecuador":"South America","Uruguay":"South America"
+};
+
+let currentFilter = { search:'', country:'', state:'', city:'', continent:'' };
+let currentView = 'grid';
+let currentPage = 1;
+const PAGE_SIZE = 24;
+let importedVenues = [];
+
+const STORAGE_KEY = 'gecd_imports_v1';
+
+document.addEventListener('DOMContentLoaded', () => {
+  loadImports();
+  buildTreeMenu();
+  populateCountryFilter();
+  renderResults();
+  updateStats();
+  injectStructuredData();
+  setLastUpdated();
+  updateImportButtons();
+
+  document.getElementById('searchInput').addEventListener('input', e => {
+    currentFilter.search = e.target.value.toLowerCase();
+    currentPage = 1;
+    renderResults();
+  });
+  document.getElementById('countryFilter').addEventListener('change', e => {
+    currentFilter.country = e.target.value;
+    currentFilter.state = ''; currentFilter.city = '';
+    populateStateFilter(); populateCityFilter();
+    currentPage = 1;
+    renderResults();
+  });
+  document.getElementById('stateFilter').addEventListener('change', e => {
+    currentFilter.state = e.target.value;
+    currentFilter.city = '';
+    populateCityFilter();
+    currentPage = 1;
+    renderResults();
+  });
+  document.getElementById('cityFilter').addEventListener('change', e => {
+    currentFilter.city = e.target.value;
+    currentPage = 1;
+    renderResults();
+  });
+
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+});
+
+// Combined dataset: built-in + imported
+function getAllVenues() {
+  return eventCenters.concat(importedVenues);
+}
+
+function setLastUpdated() {
+  const d = new Date();
+  document.getElementById('lastUpdated').textContent = d.toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' });
+  document.getElementById('currentYear').textContent = d.getFullYear();
+}
+
+function updateStats() {
+  const all = getAllVenues();
+  document.getElementById('statVenues').textContent = all.length;
+  document.getElementById('statCountries').textContent = new Set(all.map(e => e.country)).size;
+  document.getElementById('statCities').textContent = new Set(all.map(e => e.city)).size;
+}
+
+// Tree menu
+function buildTreeMenu() {
+  const all = getAllVenues();
+  const tree = {};
+  all.forEach(e => {
+    const cont = e.continent || 'Other';
+    tree[cont] = tree[cont] || {};
+    tree[cont][e.country] = tree[cont][e.country] || {};
+    tree[cont][e.country][e.state || 'Other'] = tree[cont][e.country][e.state || 'Other'] || {};
+    const c = tree[cont][e.country][e.state || 'Other'];
+    c[e.city] = (c[e.city] || 0) + 1;
+  });
+
+  const treeMenu = document.getElementById('treeMenu');
+  treeMenu.innerHTML = '';
+  Object.keys(tree).sort().forEach(continent => {
+    const continentCount = Object.values(tree[continent]).reduce((acc, c) => acc + Object.values(c).reduce((a, s) => a + Object.values(s).reduce((x, y) => x + y, 0), 0), 0);
+    const li = document.createElement('li');
+    li.className = 'tree-item';
+    li.innerHTML = '<button class="tree-toggle"><i class="fa-solid fa-chevron-right chev"></i> <i class="fa-solid fa-globe"></i> ' + escapeHTML(continent) + ' <span class="count">' + continentCount + '</span></button><ul class="tree-children"></ul>';
+    li.querySelector('.tree-toggle').onclick = () => { toggleTree(li.querySelector('.tree-toggle')); filterByContinent(continent); };
+    const continentList = li.querySelector('.tree-children');
+    Object.keys(tree[continent]).sort().forEach(country => {
+      const countryCount = Object.values(tree[continent][country]).reduce((acc, s) => acc + Object.values(s).reduce((x, y) => x + y, 0), 0);
+      const countryLi = document.createElement('li');
+      countryLi.innerHTML = '<button class="tree-toggle"><i class="fa-solid fa-chevron-right chev"></i> ' + escapeHTML(country) + ' <span class="count">' + countryCount + '</span></button><ul class="tree-children"></ul>';
+      countryLi.querySelector('.tree-toggle').onclick = (ev) => { ev.stopPropagation(); toggleTree(countryLi.querySelector('.tree-toggle')); filterByCountry(country); };
+      const countryList = countryLi.querySelector('.tree-children');
+      Object.keys(tree[continent][country]).sort().forEach(state => {
+        const stateCount = Object.values(tree[continent][country][state]).reduce((x, y) => x + y, 0);
+        const stateLi = document.createElement('li');
+        stateLi.innerHTML = '<button class="tree-toggle"><i class="fa-solid fa-chevron-right chev"></i> ' + escapeHTML(state) + ' <span class="count">' + stateCount + '</span></button><ul class="tree-children"></ul>';
+        stateLi.querySelector('.tree-toggle').onclick = (ev) => { ev.stopPropagation(); toggleTree(stateLi.querySelector('.tree-toggle')); filterByState(country, state); };
+        const stateList = stateLi.querySelector('.tree-children');
+        Object.keys(tree[continent][country][state]).sort().forEach(city => {
+          const cityLi = document.createElement('li');
+          cityLi.className = 'tree-leaf';
+          cityLi.innerHTML = escapeHTML(city) + ' <span class="count" style="margin-left:auto;">' + tree[continent][country][state][city] + '</span>';
+          cityLi.onclick = (ev) => { ev.stopPropagation(); filterByCity(country, state, city); };
+          stateList.appendChild(cityLi);
+        });
+        countryList.appendChild(stateLi);
+      });
+      continentList.appendChild(countryLi);
+    });
+    treeMenu.appendChild(li);
+  });
+}
+
+function toggleTree(btn) {
+  btn.classList.toggle('open');
+  const children = btn.nextElementSibling;
+  if (children) children.classList.toggle('open');
+}
+
+function filterByContinent(continent) { resetFiltersExcept(); currentFilter.continent = continent; currentPage = 1; renderResults(); document.getElementById('directory').scrollIntoView({behavior:'smooth'}); }
+function filterByCountry(country) { resetFiltersExcept(); currentFilter.country = country; document.getElementById('countryFilter').value = country; populateStateFilter(); populateCityFilter(); currentPage = 1; renderResults(); document.getElementById('directory').scrollIntoView({behavior:'smooth'}); }
+function filterByState(country, state) { resetFiltersExcept(); currentFilter.country = country; currentFilter.state = state; document.getElementById('countryFilter').value = country; populateStateFilter(); document.getElementById('stateFilter').value = state; populateCityFilter(); currentPage = 1; renderResults(); document.getElementById('directory').scrollIntoView({behavior:'smooth'}); }
+function filterByCity(country, state, city) { resetFiltersExcept(); currentFilter.country = country; currentFilter.state = state; currentFilter.city = city; document.getElementById('countryFilter').value = country; populateStateFilter(); document.getElementById('stateFilter').value = state; populateCityFilter(); document.getElementById('cityFilter').value = city; currentPage = 1; renderResults(); document.getElementById('directory').scrollIntoView({behavior:'smooth'}); }
+function resetFiltersExcept() {
+  currentFilter = { search: currentFilter.search, country:'', state:'', city:'', continent:'' };
+  document.getElementById('countryFilter').value = '';
+  document.getElementById('stateFilter').innerHTML = '<option value="">All States/Provinces</option>';
+  document.getElementById('cityFilter').innerHTML = '<option value="">All Cities</option>';
+}
+
+function populateCountryFilter() {
+  const select = document.getElementById('countryFilter');
+  while (select.options.length > 1) select.remove(1);
+  const countries = [...new Set(getAllVenues().map(e => e.country))].sort();
+  countries.forEach(c => { const o = document.createElement('option'); o.value = c; o.textContent = c; select.appendChild(o); });
+}
+function populateStateFilter() {
+  const select = document.getElementById('stateFilter');
+  select.innerHTML = '<option value="">All States/Provinces</option>';
+  if (!currentFilter.country) return;
+  const states = [...new Set(getAllVenues().filter(e => e.country === currentFilter.country).map(e => e.state).filter(Boolean))].sort();
+  states.forEach(s => { const o = document.createElement('option'); o.value = s; o.textContent = s; select.appendChild(o); });
+}
+function populateCityFilter() {
+  const select = document.getElementById('cityFilter');
+  select.innerHTML = '<option value="">All Cities</option>';
+  let pool = getAllVenues();
+  if (currentFilter.country) pool = pool.filter(e => e.country === currentFilter.country);
+  if (currentFilter.state) pool = pool.filter(e => e.state === currentFilter.state);
+  const cities = [...new Set(pool.map(e => e.city))].sort();
+  cities.forEach(c => { const o = document.createElement('option'); o.value = c; o.textContent = c; select.appendChild(o); });
+}
+
+function getFilteredData() {
+  return getAllVenues().filter(e => {
+    if (currentFilter.continent && e.continent !== currentFilter.continent) return false;
+    if (currentFilter.country && e.country !== currentFilter.country) return false;
+    if (currentFilter.state && e.state !== currentFilter.state) return false;
+    if (currentFilter.city && e.city !== currentFilter.city) return false;
+    if (currentFilter.search) {
+      const haystack = (e.name + ' ' + e.country + ' ' + (e.state||'') + ' ' + e.city + ' ' + e.address + ' ' + (e.description||'') + ' ' + (e.tags||[]).join(' ')).toLowerCase();
+      if (!haystack.includes(currentFilter.search)) return false;
+    }
+    return true;
+  });
+}
+
+function renderResults() {
+  const data = getFilteredData();
+  document.getElementById('resultCount').textContent = data.length;
+
+  const title = document.getElementById('resultsTitle');
+  if (currentFilter.city) title.textContent = 'Event Centers in ' + currentFilter.city;
+  else if (currentFilter.state) title.textContent = 'Event Centers in ' + currentFilter.state;
+  else if (currentFilter.country) title.textContent = 'Event Centers in ' + currentFilter.country;
+  else if (currentFilter.continent) title.textContent = 'Event Centers in ' + currentFilter.continent;
+  else if (currentFilter.search) title.textContent = 'Search results for "' + currentFilter.search + '"';
+  else title.textContent = 'All Event Centers Worldwide';
+
+  const grid = document.getElementById('cardsGrid');
+  const tbody = document.getElementById('cardsTableBody');
+  const noRes = document.getElementById('noResults');
+  const tableEl = document.getElementById('cardsTable');
+  const pag = document.getElementById('pagination');
+  grid.innerHTML = ''; tbody.innerHTML = ''; pag.innerHTML = '';
+
+  if (data.length === 0) {
+    noRes.classList.remove('hidden');
+    grid.classList.add('hidden');
+    tableEl.classList.add('hidden');
+    return;
+  }
+  noRes.classList.add('hidden');
+
+  // Pagination
+  const totalPages = Math.max(1, Math.ceil(data.length / PAGE_SIZE));
+  if (currentPage > totalPages) currentPage = totalPages;
+  const start = (currentPage - 1) * PAGE_SIZE;
+  const pageData = data.slice(start, start + PAGE_SIZE);
+
+  pageData.forEach(e => {
+    const card = document.createElement('article');
+    card.className = 'event-card';
+    card.setAttribute('role', 'listitem');
+    card.onclick = () => openModal(e.id);
+    card.innerHTML =
+      (e._userAdded ? '<span class="user-badge">Imported</span>' : '') +
+      '<div class="card-header"><div class="card-icon"><i class="fa-solid fa-building"></i></div>' +
+      '<div class="card-title"><h3>' + escapeHTML(e.name) + '</h3>' +
+      '<p class="card-location"><i class="fa-solid fa-location-dot"></i> ' + escapeHTML(e.city) + ', ' + escapeHTML(e.state || '') + (e.state ? ', ' : '') + escapeHTML(e.country) + '</p></div></div>' +
+      '<p class="card-description">' + escapeHTML(e.description || '') + '</p>' +
+      '<div class="card-tags">' + (e.tags || []).slice(0, 3).map((t, i) => '<span class="tag' + (i % 2 === 1 ? ' alt' : '') + '">' + escapeHTML(t) + '</span>').join('') + '</div>' +
+      '<div class="card-footer"><span><i class="fa-solid fa-phone"></i> ' + escapeHTML(e.phone || '—') + '</span>' + (e.email ? '<span><i class="fa-solid fa-envelope"></i> Email</span>' : '') + (e.website ? '<span><i class="fa-solid fa-globe"></i> Web</span>' : '') + '</div>';
+    grid.appendChild(card);
+
+    const row = document.createElement('tr');
+    row.onclick = () => openModal(e.id);
+    row.innerHTML =
+      '<td><strong>' + escapeHTML(e.name) + '</strong></td>' +
+      '<td>' + escapeHTML(e.city) + '</td>' +
+      '<td>' + escapeHTML(e.country) + '</td>' +
+      '<td>' + escapeHTML(e.phone) + '</td>' +
+      '<td>' + (e.tags || []).slice(0, 2).map(t => '<span class="tag" style="font-size:.7rem;">' + escapeHTML(t) + '</span>').join(' ') + '</td>';
+    tbody.appendChild(row);
+  });
+
+  // Pagination buttons
+  if (totalPages > 1) {
+    const prev = document.createElement('button');
+    prev.innerHTML = '<i class="fa-solid fa-chevron-left"></i>';
+    prev.disabled = currentPage === 1;
+    prev.onclick = () => { currentPage--; renderResults(); window.scrollTo({top: document.querySelector('.results-header').offsetTop - 80, behavior:'smooth'}); };
+    pag.appendChild(prev);
+
+    const maxButtons = 7;
+    let startPage = Math.max(1, currentPage - 3);
+    let endPage = Math.min(totalPages, startPage + maxButtons - 1);
+    if (endPage - startPage < maxButtons - 1) startPage = Math.max(1, endPage - maxButtons + 1);
+    for (let p = startPage; p <= endPage; p++) {
+      const btn = document.createElement('button');
+      btn.textContent = p;
+      if (p === currentPage) btn.classList.add('active');
+      btn.onclick = () => { currentPage = p; renderResults(); window.scrollTo({top: document.querySelector('.results-header').offsetTop - 80, behavior:'smooth'}); };
+      pag.appendChild(btn);
+    }
+
+    const next = document.createElement('button');
+    next.innerHTML = '<i class="fa-solid fa-chevron-right"></i>';
+    next.disabled = currentPage === totalPages;
+    next.onclick = () => { currentPage++; renderResults(); window.scrollTo({top: document.querySelector('.results-header').offsetTop - 80, behavior:'smooth'}); };
+    pag.appendChild(next);
+  }
+
+  if (currentView === 'grid') {
+    grid.classList.remove('hidden'); grid.style.display = 'grid';
+    tableEl.classList.add('hidden'); tableEl.style.display = 'none';
+  } else {
+    grid.classList.add('hidden'); grid.style.display = 'none';
+    tableEl.classList.remove('hidden'); tableEl.style.display = 'block';
+  }
+}
+
+function setView(view) {
+  currentView = view;
+  document.getElementById('viewGrid').classList.toggle('active', view === 'grid');
+  document.getElementById('viewTable').classList.toggle('active', view === 'table');
+  renderResults();
+}
+
+function openModal(id) {
+  const e = getAllVenues().find(x => x.id === id);
+  if (!e) return;
+  document.getElementById('modalTitle').textContent = e.name;
+  document.getElementById('modalLocation').innerHTML = '<i class="fa-solid fa-location-dot"></i> ' + escapeHTML(e.city) + ', ' + escapeHTML(e.state || '') + (e.state ? ', ' : '') + escapeHTML(e.country);
+
+  let html = '';
+  if (e.description) html += '<div class="modal-section"><h4>About</h4><p>' + escapeHTML(e.description) + '</p></div>';
+  if (e.tags && e.tags.length) html += '<div class="modal-section"><h4>Tags</h4><div class="card-tags" style="margin-top:6px;">' + e.tags.map((t, i) => '<span class="tag' + (i % 2 === 1 ? ' alt' : '') + '">' + escapeHTML(t) + '</span>').join('') + '</div></div>';
+  html += '<div class="modal-section"><h4>Contact Information</h4>';
+  html += '<div class="contact-row"><div class="ico"><i class="fa-solid fa-location-dot"></i></div><div class="info"><span>Address</span><p>' + escapeHTML(e.address) + '</p></div></div>';
+  if (e.phone) html += '<div class="contact-row"><div class="ico"><i class="fa-solid fa-phone"></i></div><div class="info"><span>Phone</span><a href="tel:' + escapeHTML(e.phone.replace(/\s+/g,'')) + '">' + escapeHTML(e.phone) + '</a></div></div>';
+  if (e.email) html += '<div class="contact-row"><div class="ico"><i class="fa-solid fa-envelope"></i></div><div class="info"><span>Email</span><a href="mailto:' + escapeHTML(e.email) + '">' + escapeHTML(e.email) + '</a></div></div>';
+  if (e.website) html += '<div class="contact-row"><div class="ico"><i class="fa-solid fa-globe"></i></div><div class="info"><span>Website</span><a href="' + escapeHTML(e.website) + '" target="_blank" rel="noopener noreferrer">' + escapeHTML(e.website.replace(/^https?:\/\//,'')) + ' <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:.75rem;"></i></a></div></div>';
+  html += '</div>';
+  html += '<div class="modal-section" style="display:flex;gap:10px;flex-wrap:wrap;">';
+  html += '<a href="https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(e.address) + '" target="_blank" rel="noopener" style="flex:1;min-width:180px;text-align:center;background:var(--accent);color:#fff;padding:11px 16px;border-radius:8px;font-weight:600;font-size:.9rem;text-decoration:none;"><i class="fa-solid fa-map"></i> View on Google Maps</a>';
+  if (e.website) html += '<a href="' + escapeHTML(e.website) + '" target="_blank" rel="noopener noreferrer" style="flex:1;min-width:180px;text-align:center;background:var(--primary);color:#fff;padding:11px 16px;border-radius:8px;font-weight:600;font-size:.9rem;text-decoration:none;"><i class="fa-solid fa-up-right-from-square"></i> Visit Website</a>';
+  html += '</div>';
+
+  document.getElementById('modalBody').innerHTML = html;
+  document.getElementById('modalBackdrop').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('modalBackdrop').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function heroSearch() {
+  const v = document.getElementById('heroSearchInput').value;
+  document.getElementById('searchInput').value = v;
+  currentFilter.search = v.toLowerCase();
+  currentPage = 1;
+  renderResults();
+  document.getElementById('directory').scrollIntoView({ behavior:'smooth' });
+}
+
+function toggleNav() {
+  const nav = document.getElementById('mainNav');
+  const btn = document.querySelector('.menu-toggle');
+  const open = nav.classList.toggle('active');
+  btn.setAttribute('aria-expanded', open);
+}
+
+function submitAddForm(ev) {
+  ev.preventDefault();
+  document.getElementById('formSuccess').classList.add('show');
+  setTimeout(() => {
+    document.getElementById('addForm').reset();
+    setTimeout(() => document.getElementById('formSuccess').classList.remove('show'), 3000);
+  }, 800);
+}
+
+function injectStructuredData() {
+  const all = getAllVenues();
+  const items = all.slice(0, 50).map((e, idx) => ({
+    "@type": "ListItem",
+    "position": idx + 1,
+    "item": {
+      "@type": "LocalBusiness",
+      "name": e.name,
+      "description": e.description,
+      "url": e.website || "",
+      "telephone": e.phone,
+      "email": e.email || "",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": e.address,
+        "addressLocality": e.city,
+        "addressRegion": e.state,
+        "addressCountry": e.country
+      }
+    }
+  }));
+  const schema = { "@context":"https://schema.org", "@type":"ItemList", "name":"Top Event Centers Worldwide", "itemListElement": items };
+  document.getElementById('local-business-schema').textContent = JSON.stringify(schema);
+}
+
+function escapeHTML(str) {
+  if (str == null) return '';
+  return String(str).replace(/[&<>"']/g, m => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[m]));
+}
+
+// ============================================================
+// CSV IMPORT / EXPORT / DOWNLOAD UPDATED FILE
+// ============================================================
+function downloadCsvTemplate() {
+  const headers = ['name','country','state','city','address','phone','email','website','description','tags','continent'];
+  const example = ['Sample Event Centre','Nigeria','Lagos State','Lagos','12 Example Road, Victoria Island, Lagos','+234 1 234 5678','info@sample.com','https://www.sample.com','A short description of the venue.','Wedding Venue|Conference Center','Africa'];
+  const csv = headers.join(',') + '\n' + example.map(v => '"' + String(v).replace(/"/g,'""') + '"').join(',') + '\n';
+  downloadBlob(csv, 'event-centers-template.csv', 'text/csv');
+  showToast('Template downloaded. Fill in your venues and re-upload.', 'success');
+}
+
+function handleCsvUpload(ev) {
+  const file = ev.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    try {
+      const rows = parseCSV(e.target.result);
+      if (rows.length < 2) { showToast('CSV is empty or has no data rows.', 'error'); return; }
+      const headerRow = rows[0].map(h => h.trim().toLowerCase());
+      const required = ['name','country','city','address','phone'];
+      const missing = required.filter(r => !headerRow.includes(r));
+      if (missing.length) { showToast('Missing required columns: ' + missing.join(', '), 'error'); return; }
+
+      const idIdx = {};
+      headerRow.forEach((h, i) => idIdx[h] = i);
+
+      const all = getAllVenues();
+      let nextId = (all.reduce((max, v) => Math.max(max, v.id || 0), 0)) + 1;
+      let added = 0, skipped = 0;
+      const newVenues = [];
+      for (let i = 1; i < rows.length; i++) {
+        const row = rows[i];
+        if (!row.length || row.every(c => !c || !c.trim())) continue;
+        const get = (k) => idIdx[k] !== undefined ? (row[idIdx[k]] || '').trim() : '';
+        const name = get('name'), country = get('country'), city = get('city'), address = get('address'), phone = get('phone');
+        if (!name || !country || !city || !address || !phone) { skipped++; continue; }
+        const tagsRaw = get('tags');
+        const tags = tagsRaw ? tagsRaw.split(/[|;]/).map(t => t.trim()).filter(Boolean) : ['Event Centre'];
+        const continent = get('continent') || COUNTRY_CONTINENT[country] || 'Other';
+        newVenues.push({
+          id: nextId++,
+          name, continent, country,
+          state: get('state'),
+          city, address, phone,
+          email: get('email'),
+          website: get('website'),
+          description: get('description'),
+          tags,
+          _userAdded: true
+        });
+        added++;
+      }
+      importedVenues = importedVenues.concat(newVenues);
+      saveImports();
+      buildTreeMenu();
+      populateCountryFilter();
+      populateStateFilter();
+      populateCityFilter();
+      currentPage = 1;
+      renderResults();
+      updateStats();
+      injectStructuredData();
+      updateImportButtons();
+      showToast('Imported ' + added + ' venue(s)' + (skipped ? ', skipped ' + skipped + ' incomplete row(s)' : '') + '. Click "Download Updated File" to save permanently.', 'success');
+    } catch (err) {
+      console.error(err);
+      showToast('CSV parse error: ' + err.message, 'error');
+    }
+    document.getElementById('csvFileInput').value = '';
+  };
+  reader.readAsText(file);
+}
+
+// Robust CSV parser supporting quoted fields, escaped quotes, commas in fields, CRLF
+function parseCSV(text) {
+  const rows = [];
+  let cur = [], field = '', inQuotes = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i], n = text[i+1];
+    if (inQuotes) {
+      if (c === '"' && n === '"') { field += '"'; i++; }
+      else if (c === '"') inQuotes = false;
+      else field += c;
+    } else {
+      if (c === '"') inQuotes = true;
+      else if (c === ',') { cur.push(field); field = ''; }
+      else if (c === '\r') { /* skip, handled by \n */ }
+      else if (c === '\n') { cur.push(field); rows.push(cur); cur = []; field = ''; }
+      else field += c;
+    }
+  }
+  if (field.length || cur.length) { cur.push(field); rows.push(cur); }
+  return rows.filter(r => r.length > 0);
+}
+
+function saveImports() {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(importedVenues)); } catch(e) { console.warn('localStorage save failed', e); }
+}
+function loadImports() {
+  try {
+    const v = localStorage.getItem(STORAGE_KEY);
+    if (v) importedVenues = JSON.parse(v) || [];
+  } catch(e) { importedVenues = []; }
+}
+function clearImports() {
+  if (!confirm('Clear all imported venues from this browser? Built-in venues will remain.')) return;
+  importedVenues = [];
+  saveImports();
+  buildTreeMenu();
+  populateCountryFilter();
+  populateStateFilter();
+  populateCityFilter();
+  currentPage = 1;
+  renderResults();
+  updateStats();
+  injectStructuredData();
+  updateImportButtons();
+  showToast('Imported venues cleared.', 'success');
+}
+function updateImportButtons() {
+  const has = importedVenues.length > 0;
+  document.getElementById('btnDownloadFile').classList.toggle('hidden', !has);
+  document.getElementById('btnClearImports').classList.toggle('hidden', !has);
+}
+
+// Download an updated index.html with imported venues permanently merged
+async function downloadUpdatedHtml() {
+  try {
+    // Fetch the original page source so we have the exact bytes (including data array formatting)
+    const res = await fetch(window.location.href);
+    let src = await res.text();
+
+    // Build merged dataset (built-in + imports), strip the _userAdded helper flag
+    const merged = getAllVenues().map(v => {
+      const o = Object.assign({}, v);
+      delete o._userAdded;
+      return o;
+    });
+
+    // Serialize JS array literal manually to keep it readable & valid JS
+    const newDataLiteral = merged.map(v => '  ' + JSON.stringify(v)).join(',\n');
+
+    // Replace everything between /* DATA_START */ and /* DATA_END */ markers
+    const startMarker = '/* DATA_START */';
+    const endMarker = '/* DATA_END */';
+    const startIdx = src.indexOf(startMarker);
+    const endIdx = src.indexOf(endMarker);
+    if (startIdx === -1 || endIdx === -1) {
+      showToast('Could not locate data markers in source. Cannot generate updated file.', 'error');
+      return;
+    }
+    const before = src.substring(0, startIdx + startMarker.length);
+    const after = src.substring(endIdx);
+    const newBlock = '\nconst eventCenters = [\n' + newDataLiteral + '\n];\n';
+    src = before + newBlock + after;
+
+    downloadBlob(src, 'index.html', 'text/html');
+    showToast('Updated index.html downloaded with ' + merged.length + ' venues. Re-upload it to your host to publish.', 'success');
+  } catch (err) {
+    console.error(err);
+    showToast('Could not generate updated file: ' + err.message, 'error');
+  }
+}
+
+function downloadBlob(content, filename, type) {
+  const blob = new Blob([content], { type: type });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(() => { document.body.removeChild(a); URL.revokeObjectURL(url); }, 100);
+}
+
+function showToast(msg, type) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast show' + (type ? ' ' + type : '');
+  setTimeout(() => { t.className = 'toast'; }, 4500);
+}
+</script>
+</body>
+</html>
