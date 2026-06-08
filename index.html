@@ -187,6 +187,8 @@ button{font-family:inherit;cursor:pointer;border:none}
 .pgbar button:hover:not([disabled]){background:var(--accent-dark)}
 .pgbar button[disabled]{opacity:.4;cursor:not-allowed}
 .pgbar span{color:var(--text-light);font-size:.9rem;text-align:center}
+.pgbar select{background:var(--card-bg);color:var(--text);border:1.5px solid var(--border);padding:7px 10px;border-radius:8px;font-size:.85rem;font-family:inherit;cursor:pointer;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23888'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 8px center;padding-right:26px}
+.pgbar select:focus{outline:none;border-color:var(--accent)}.pgbar label{color:var(--text-light);font-size:.85rem;white-space:nowrap}
 
 </style>
 <!-- ── Google Analytics GA4 ─────────────────────────────────────
@@ -30570,6 +30572,7 @@ function escapeHTML(str) {
 
 // ── PAGINATION ────────────────────────────────────────────────────────────
 let _pg=1,_pgSz=50;
+function setPageSize(sz){_pgSz=parseInt(sz);_pg=1;renderResults();}
 function renderResults(){
   const all=getFilteredData();
   const totalPages=Math.max(1,Math.ceil(all.length/_pgSz));
@@ -30603,7 +30606,7 @@ function renderResults(){
   const pgEl=document.getElementById('pgbox');
   if(totalPages<=1){pgEl.innerHTML='';return;}
   const start=(_pg-1)*_pgSz+1,end=Math.min(_pg*_pgSz,all.length);
-  pgEl.innerHTML=`<div class="pgbar"><button onclick="goPage(1)" ${_pg===1?'disabled':''}title="First">«</button><button onclick="goPage(${_pg-1})" ${_pg===1?'disabled':''}>‹ Prev</button><span>Page <strong>${_pg}</strong> of <strong>${totalPages}</strong> &nbsp;·&nbsp; ${start}–${end} of ${all.length.toLocaleString()} venues</span><button onclick="goPage(${_pg+1})" ${_pg===totalPages?'disabled':''}>Next ›</button><button onclick="goPage(${totalPages})" ${_pg===totalPages?'disabled':''}title="Last">»</button></div>`;
+  pgEl.innerHTML=`<div class="pgbar"><button onclick="goPage(1)" ${_pg===1?'disabled':''}title="First">«</button><button onclick="goPage(${_pg-1})" ${_pg===1?'disabled':''}>‹ Prev</button><span>Page <strong>${_pg}</strong> of <strong>${totalPages}</strong> &nbsp;·&nbsp; ${start}–${end} of ${all.length.toLocaleString()} venues</span><button onclick="goPage(${_pg+1})" ${_pg===totalPages?'disabled':''}>Next ›</button><button onclick="goPage(${totalPages})" ${_pg===totalPages?'disabled':''}title="Last">»</button><label for="pgSzSel">Per page:</label><select id="pgSzSel" onchange="setPageSize(this.value)"><option value="50" ${_pgSz===50?'selected':''}>50</option><option value="100" ${_pgSz===100?'selected':''}>100</option><option value="200" ${_pgSz===200?'selected':''}>200</option></select></div>`;
 }
 function goPage(p){_pg=p;renderResults();const d=document.getElementById('directory');if(d)d.scrollIntoView({behavior:'smooth'});}
 
