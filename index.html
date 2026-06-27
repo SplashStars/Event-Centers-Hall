@@ -9,6 +9,16 @@
 ================================================================================
 -->
 <meta charset="UTF-8">
+<link rel="manifest" href="/manifest.json">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="EventFinder">
+<meta name="application-name" content="Event Center Finder">
+<meta name="theme-color" content="#1e3a8a">
+<link rel="apple-touch-icon" href="/icons/icon-152.png">
+<link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192.png">
+<link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512.png">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Event Center Finder | Global Directory of Event Centers, Venues & Halls</title>
@@ -63534,6 +63544,63 @@ function renderResults(){
 }
 function goPage(p){_pg=p;renderResults();const d=document.getElementById('directory');if(d)d.scrollIntoView({behavior:'smooth'});}
 
+</script>
+
+<script>
+// ── Service Worker Registration ──────────────────────────────
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then(reg => console.log('[ECF] SW registered:', reg.scope))
+      .catch(err => console.warn('[ECF] SW registration failed:', err));
+  });
+}
+
+// ── PWA Install Prompt ────────────────────────────────────────
+let deferredPrompt;
+const installBanner = document.createElement('div');
+installBanner.id = 'pwa-install-banner';
+installBanner.innerHTML = `
+  <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+    <img src="/icons/icon-72.png" width="40" height="40" alt="" style="border-radius:8px;">
+    <div style="flex:1;min-width:180px;">
+      <div style="font-weight:700;font-size:.95rem;color:#1e3a8a;">Install Event Center Finder</div>
+      <div style="font-size:.82rem;color:#64748b;">Add to home screen for quick access</div>
+    </div>
+    <button id="pwa-install-btn" style="background:#1e3a8a;color:#fff;border:none;padding:9px 20px;border-radius:8px;font-weight:600;cursor:pointer;font-size:.9rem;">Install App</button>
+    <button id="pwa-dismiss-btn" style="background:none;border:none;color:#94a3b8;cursor:pointer;font-size:1.3rem;line-height:1;padding:4px 8px;">&times;</button>
+  </div>`;
+installBanner.style.cssText = 'display:none;position:fixed;bottom:0;left:0;right:0;background:#fff;padding:14px 20px;box-shadow:0 -4px 20px rgba(0,0,0,.12);z-index:9999;border-top:2px solid #1e3a8a;';
+document.body.appendChild(installBanner);
+
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  deferredPrompt = e;
+  // Only show if not dismissed before
+  if (!localStorage.getItem('pwa-dismissed')) {
+    setTimeout(() => { installBanner.style.display = 'block'; }, 3000);
+  }
+});
+
+document.addEventListener('click', e => {
+  if (e.target.id === 'pwa-install-btn' && deferredPrompt) {
+    installBanner.style.display = 'none';
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then(choice => {
+      console.log('[ECF] Install prompt result:', choice.outcome);
+      deferredPrompt = null;
+    });
+  }
+  if (e.target.id === 'pwa-dismiss-btn') {
+    installBanner.style.display = 'none';
+    localStorage.setItem('pwa-dismissed', '1');
+  }
+});
+
+window.addEventListener('appinstalled', () => {
+  installBanner.style.display = 'none';
+  console.log('[ECF] App installed!');
+});
 </script>
 </body>
 </html>

@@ -1,0 +1,42 @@
+{
+  "name": "Event Center Finder",
+  "short_name": "EventFinder",
+  "description": "The world's largest free directory of event centers, banquet halls, wedding venues and conference centers across 50+ countries.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f8fafc",
+  "theme_color": "#1e3a8a",
+  "lang": "en",
+  "categories": ["business", "lifestyle", "travel"],
+  "icons": [
+    { "src": "/icons/icon-72.png",  "sizes": "72x72",   "type": "image/png" },
+    { "src": "/icons/icon-96.png",  "sizes": "96x96",   "type": "image/png" },
+    { "src": "/icons/icon-128.png", "sizes": "128x128", "type": "image/png" },
+    { "src": "/icons/icon-144.png", "sizes": "144x144", "type": "image/png" },
+    { "src": "/icons/icon-152.png", "sizes": "152x152", "type": "image/png" },
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icons/icon-384.png", "sizes": "384x384", "type": "image/png" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    {
+      "name": "Search Venues",
+      "short_name": "Search",
+      "description": "Find event venues near you",
+      "url": "/?action=search",
+      "icons": [{ "src": "/icons/icon-96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Nigerian Venues",
+      "short_name": "Nigeria",
+      "description": "Browse Nigeria event centers",
+      "url": "/?country=Nigeria",
+      "icons": [{ "src": "/icons/icon-96.png", "sizes": "96x96" }]
+    }
+  ],
+  "screenshots": [],
+  "prefer_related_applications": false
+}
