@@ -1,9 +1,9 @@
 /* ============================================================
-   Event Center Finder — Service Worker
+   Event Center Finder â Service Worker
    Strategy: Cache-first for assets, network-first for HTML
    ============================================================ */
 
-const CACHE_NAME = 'ecf-v1';
+const CACHE_NAME = 'ecf-v3';
 const OFFLINE_URL = '/';
 
 // Assets to pre-cache on install
@@ -15,7 +15,7 @@ const PRECACHE_ASSETS = [
   '/icons/icon-512.png',
 ];
 
-// ── Install: pre-cache shell ──────────────────────────────────
+// ââ Install: pre-cache shell ââââââââââââââââââââââââââââââââââ
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
@@ -26,7 +26,7 @@ self.addEventListener('install', event => {
   );
 });
 
-// ── Activate: clean old caches ────────────────────────────────
+// ââ Activate: clean old caches ââââââââââââââââââââââââââââââââ
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(keys =>
@@ -37,7 +37,7 @@ self.addEventListener('activate', event => {
   );
 });
 
-// ── Fetch: network-first with cache fallback ──────────────────
+// ââ Fetch: network-first with cache fallback ââââââââââââââââââ
 self.addEventListener('fetch', event => {
   // Only handle GET requests
   if (event.request.method !== 'GET') return;
@@ -58,7 +58,7 @@ self.addEventListener('fetch', event => {
         return response;
       })
       .catch(() => {
-        // Network failed — serve from cache
+        // Network failed â serve from cache
         return caches.match(event.request).then(cached => {
           if (cached) return cached;
           // Ultimate fallback: serve the main page
@@ -68,7 +68,7 @@ self.addEventListener('fetch', event => {
   );
 });
 
-// ── Background sync: notify clients on update ─────────────────
+// ââ Background sync: notify clients on update âââââââââââââââââ
 self.addEventListener('message', event => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();
