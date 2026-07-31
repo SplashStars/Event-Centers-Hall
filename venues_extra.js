@@ -39,7 +39,7 @@ function _render(){
   else if(_cf.state)title.textContent="Event Centers in "+_cf.state;
   else if(_cf.country)title.textContent="Event Centers in "+_cf.country;
   else if(_cf.continent)title.textContent="Event Centers in "+_cf.continent;
-  else if(_cf.search)title.textContent="Results for \""+_cf.search+"\"";
+  else if(_cf.search)title.textContent="Search results for: "+_cf.search;
   else title.textContent="All Event Centers Worldwide";
   var grid=document.getElementById("cardsGrid");
   var tbody=document.getElementById("cardsTableBody");
@@ -67,12 +67,13 @@ window.filterByCountry=function(c){_reset();_cf.country=c;document.getElementByI
 window.filterByState=function(co,st){_reset();_cf.country=co;_cf.state=st;document.getElementById("countryFilter").value=co;_pState();document.getElementById("stateFilter").value=st;_pCity();_render();};
 window.filterByCity=function(co,st,ci){_reset();_cf.country=co;_cf.state=st;_cf.city=ci;document.getElementById("countryFilter").value=co;_pState();document.getElementById("stateFilter").value=st;_pCity();document.getElementById("cityFilter").value=ci;_render();};
 window.toggleTree=function(btn){btn.classList.toggle("open");var ch=btn.nextElementSibling;if(ch)ch.classList.toggle("open");};
-window.closeModal=function(){var o=document.getElementById("modalOverlay");if(o){o.classList.add("hidden");o.style.display="none";}};
+window.closeModal=function(){var o=document.getElementById("modalBackdrop");if(o){o.classList.add("hidden");o.style.display="none";}};
 window.setView=function(v){_cv=v;var gb=document.getElementById("viewGrid");var tb=document.getElementById("viewTable");if(gb)gb.classList.toggle("active",v==="grid");if(tb)tb.classList.toggle("active",v==="table");_render();};
 window._openM=function(id){
   var e=_ec.find(function(x){return x.id===id;});if(!e)return;
-  document.getElementById("modalTitle").textContent=e.name;
-  document.getElementById("modalLocation").innerHTML="<i class=\"fa-solid fa-location-dot\"></i> "+_esc(e.city)+", "+_esc(e.state||"")+", "+_esc(e.country);
+  var mt=document.getElementById("modalTitle");if(mt)mt.textContent=e.name;
+  var ml=document.getElementById("modalLocation");
+  if(ml)ml.innerHTML="<i class=\"fa-solid fa-location-dot\"></i> "+_esc(e.city)+", "+_esc(e.state||"")+", "+_esc(e.country);
   var tagsHtml=(e.tags||[]).map(function(t,i){return"<span class=\"tag"+(i%2===1?" alt":"")+"\">"+_esc(t)+"</span>";}).join("");
   var h="<div class=\"modal-section\"><h4>About</h4><p>"+_esc(e.description||"")+"</p></div>"
     +"<div class=\"modal-section\"><h4>Tags</h4><div class=\"card-tags\" style=\"margin-top:6px;\">"+tagsHtml+"</div></div>"
@@ -81,24 +82,25 @@ window._openM=function(id){
     +(e.phone?"<div class=\"contact-row\"><div class=\"ico\"><i class=\"fa-solid fa-phone\"></i></div><div class=\"info\"><span>Phone</span><a href=\"tel:"+_esc(e.phone.replace(/\s+/g,""))+"\">"+_esc(e.phone)+"</a></div></div>":"")
     +(e.email?"<div class=\"contact-row\"><div class=\"ico\"><i class=\"fa-solid fa-envelope\"></i></div><div class=\"info\"><span>Email</span><a href=\"mailto:"+_esc(e.email)+"\">"+_esc(e.email)+"</a></div></div>":"")
     +"</div>";
-  document.getElementById("modalBody").innerHTML=h;
-  var ov=document.getElementById("modalOverlay");
+  var mb=document.getElementById("modalBody");if(mb)mb.innerHTML=h;
+  var ov=document.getElementById("modalBackdrop");
   if(ov){ov.classList.remove("hidden");ov.style.display="flex";}};
 document.addEventListener("DOMContentLoaded",function(){
-  // Populate country dropdown
   var sc=document.getElementById("countryFilter");
   [...new Set(_ec.map(function(e){return e.country;}))].sort().forEach(function(c){var o=document.createElement("option");o.value=c;o.textContent=c;sc.appendChild(o);});
   _render();
-  document.getElementById("statVenues").textContent=_ec.length+"+";
-  document.getElementById("statCountries").textContent=new Set(_ec.map(function(e){return e.country;})).size;
-  document.getElementById("statCities").textContent="29,935+";
-  try{var d=new Date();document.getElementById("lastUpdated").textContent=d.toLocaleDateString("en-US",{year:"numeric",month:"long",day:"numeric"});document.getElementById("currentYear").textContent=d.getFullYear();}catch(ex){}
-  document.getElementById("searchInput").addEventListener("input",function(e){_cf.search=e.target.value.toLowerCase();_render();});
+  var sv=document.getElementById("statVenues");if(sv)sv.textContent=_ec.length+"+";
+  var sco=document.getElementById("statCountries");if(sco)sco.textContent=new Set(_ec.map(function(e){return e.country;})).size;
+  var sci=document.getElementById("statCities");if(sci)sci.textContent="29,935+";
+  try{var d=new Date();var lu=document.getElementById("lastUpdated");if(lu)lu.textContent=d.toLocaleDateString("en-US",{year:"numeric",month:"long",day:"numeric"});var cy=document.getElementById("currentYear");if(cy)cy.textContent=d.getFullYear();}catch(ex){}
+  var si=document.getElementById("searchInput");
+  if(si)si.addEventListener("input",function(e){_cf.search=e.target.value.toLowerCase();_render();});
+  var hi=document.getElementById("heroSearchInput");
+  if(hi)hi.addEventListener("input",function(e){_cf.search=e.target.value.toLowerCase();var si2=document.getElementById("searchInput");if(si2)si2.value=e.target.value;_render();});
   document.getElementById("countryFilter").addEventListener("change",function(e){_cf.country=e.target.value;_cf.state="";_cf.city="";_pState();_pCity();_render();});
   document.getElementById("stateFilter").addEventListener("change",function(e){_cf.state=e.target.value;_cf.city="";_pCity();_render();});
   document.getElementById("cityFilter").addEventListener("change",function(e){_cf.city=e.target.value;_render();});
   document.addEventListener("keydown",function(e){if(e.key==="Escape")window.closeModal();});
-  // Build tree menu using DOM methods (no inline onclick)
   var tm=document.getElementById("treeMenu");
   if(tm){
     var tree={};
@@ -114,7 +116,7 @@ document.addEventListener("DOMContentLoaded",function(){
         var cli=document.createElement("li");
         var cb=document.createElement("button");cb.className="tree-toggle";cb.textContent=cou;
         (function(co){cb.addEventListener("click",function(ev){ev.stopPropagation();window.filterByCountry(co);window.toggleTree(cb);});})(cou);
-        ul.appendChild(cli);cli.appendChild(cb);
+        cli.appendChild(cb);ul.appendChild(cli);
       });
       li.appendChild(btn);li.appendChild(ul);tm.appendChild(li);
     });
