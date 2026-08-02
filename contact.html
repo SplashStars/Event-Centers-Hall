@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Event Center Finder</title>
+<meta name="description" content="Contact Event Center Finder - get in touch for venue submissions, corrections, advertising or general enquiries.">
+<link rel="canonical" href="https://eventcenterfinder.com/contact.html">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;background:#f8fafc;color:#1f2937;line-height:1.7}
+a{color:#2563eb;text-decoration:none}
+a:hover{text-decoration:underline}
+.site-header{background:#172554;color:#fff;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.site-header .logo{color:#fff;font-weight:700;font-size:1.1rem}
+.site-header nav a{color:rgba(255,255,255,.85);margin-left:1.5rem;font-size:.92rem}
+.site-header nav a:hover{color:#fff}
+.container{max-width:900px;margin:0 auto;padding:2.5rem 1.5rem}
+h1{color:#172554;font-size:2rem;margin-bottom:.5rem}
+.lead{color:#4b5563;font-size:1.05rem;margin-bottom:2rem}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
+@media(max-width:640px){.grid{grid-template-columns:1fr}}
+.card{background:#fff;border-radius:10px;padding:1.8rem;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.card h2{color:#1e3a8a;font-size:1.1rem;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
+.card p{color:#374151;margin:.4rem 0}
+.contact-item{display:flex;align-items:flex-start;gap:.8rem;margin:.8rem 0}
+.contact-item .icon{font-size:1.2rem;margin-top:.1rem;flex-shrink:0}
+form label{display:block;font-weight:500;font-size:.9rem;margin:.8rem 0 .25rem;color:#374151}
+form input, form select, form textarea{width:100%;padding:.6rem .85rem;border:1.5px solid #d1d5db;border-radius:6px;font-size:.95rem;font-family:inherit;background:#f9fafb;color:#1f2937}
+form input:focus, form select:focus, form textarea:focus{outline:none;border-color:#2563eb;background:#fff}
+form textarea{resize:vertical;min-height:120px}
+.btn{display:inline-block;background:#2563eb;color:#fff;padding:.7rem 2rem;border-radius:7px;border:none;font-size:1rem;font-weight:600;cursor:pointer;margin-top:1rem;width:100%}
+.btn:hover{background:#1d4ed8}
+.success{display:none;background:#d1fae5;border:1px solid #6ee7b7;color:#065f46;padding:1rem;border-radius:7px;margin-top:1rem}
+.faq h3{color:#1e3a8a;font-size:1rem;margin:1.2rem 0 .3rem}
+.faq p{color:#4b5563;font-size:.95rem}
+footer{background:#172554;color:rgba(255,255,255,.8);text-align:center;padding:1.5rem;margin-top:3rem;font-size:.9rem}
+footer a{color:rgba(255,255,255,.7)}
+footer a:hover{color:#fff}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <a href="/" class="logo">&#127968; Global Event Centers</a>
+  <nav>
+    <a href="/">Directory</a>
+    <a href="/about.html">About</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/terms.html">Terms</a>
+  </nav>
+</header>
+<div class="container">
+  <h1>Contact Us</h1>
+  <p class="lead">Have a question, correction or want to submit a new venue? We'd love to hear from you.</p>
+
+  <div class="grid">
+    <div>
+      <div class="card">
+        <h2>&#128231; Send Us a Message</h2>
+        <form id="contactForm" action="https://formspree.io/f/xqaperng" method="POST">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" required placeholder="Jane Smith">
+
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required placeholder="jane@example.com">
+
+          <label for="subject">Subject</label>
+          <select id="subject" name="subject">
+            <option value="general">General Enquiry</option>
+            <option value="listing">Submit or Update a Venue Listing</option>
+            <option value="correction">Report Incorrect Information</option>
+            <option value="removal">Request Listing Removal</option>
+            <option value="advertising">Advertising Enquiry</option>
+            <option value="other">Other</option>
+          </select>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required placeholder="Tell us how we can help..."></textarea>
+
+          <button type="submit" class="btn">Send Message</button>
+          <div class="success" id="formSuccess">Thanks! We'll get back to you within 2 business days.</div>
+        </form>
+      </div>
+    </div>
+
+    <div>
+      <div class="card">
+        <h2>&#128205; Get in Touch</h2>
+        <div class="contact-item">
+          <span class="icon">&#9993;</span>
+          <div>
+            <strong>General Enquiries</strong><br>
+            <a href="mailto:info@eventcenterfinder.com">info@eventcenterfinder.com</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="icon">&#128274;</span>
+          <div>
+            <strong>Privacy Matters</strong><br>
+            <a href="mailto:privacy@eventcenterfinder.com">privacy@eventcenterfinder.com</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="icon">&#9203;</span>
+          <div>
+            <strong>Response Time</strong><br>
+            We typically respond within 2 business days.
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:1.5rem">
+        <h2>&#10067; Common Questions</h2>
+        <div class="faq">
+          <h3>How do I add my venue?</h3>
+          <p>Use the <a href="/#add-listing">Add Listing form</a> on our homepage. We review all submissions before publishing.</p>
+
+          <h3>How do I update or remove a listing?</h3>
+          <p>Email us at <a href="mailto:info@eventcenterfinder.com">info@eventcenterfinder.com</a> with the venue name and the changes or removal request.</p>
+
+          <h3>Is listing free?</h3>
+          <p>Yes. Submitting and featuring your venue in our directory is completely free.</p>
+
+          <h3>I found incorrect information — what do I do?</h3>
+          <p>Please use the contact form above and select "Report Incorrect Information". We appreciate your help keeping the directory accurate.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer>
+  <p>&copy; 2026 Global Event Centers Directory &mdash;
+  <a href="/">Home</a> &bull;
+  <a href="/privacy.html">Privacy Policy</a> &bull;
+  <a href="/terms.html">Terms of Service</a> &bull;
+  <a href="/contact.html">Contact</a></p>
+</footer>
+<script>
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  var btn = this.querySelector('.btn');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  try {
+    var res = await fetch(this.action, {
+      method: 'POST', headers: {'Accept': 'application/json'},
+      body: new FormData(this)
+    });
+    if(res.ok) {
+      this.reset();
+      document.getElementById('formSuccess').style.display = 'block';
+      btn.textContent = 'Sent!';
+    } else { throw new Error(); }
+  } catch(err) {
+    btn.textContent = 'Send Message';
+    btn.disabled = false;
+    alert('Something went wrong. Please email us directly at info@eventcenterfinder.com');
+  }
+});
+</script>
+</body>
+</html>
