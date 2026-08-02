@@ -121,5 +121,20 @@ document.addEventListener("DOMContentLoaded",function(){
       li.appendChild(btn);li.appendChild(ul);tm.appendChild(li);
     });
   }
+
+  // Patch nav links to dedicated pages (AdSense compliance)
+  document.querySelectorAll("a[href='#privacy']").forEach(function(a){a.href="/privacy.html";});
+  document.querySelectorAll("a[href='#footer']").forEach(function(a){if(/contact/i.test(a.textContent))a.href="/contact.html";});
+  // Add Terms link to nav and footer if not present
+  var nav=document.getElementById("mainNav");
+  if(nav&&!nav.querySelector("a[href='/terms.html']")){
+    var tl=document.createElement("a");tl.href="/terms.html";tl.textContent="Terms";nav.appendChild(tl);
+  }
+  // Update footer Privacy Policy link
+  document.querySelectorAll("a[href='#privacy']").forEach(function(a){a.href="/privacy.html";});
+  // Update footer Contact link
+  document.querySelectorAll("footer a[href='#footer'], footer a[href='#']").forEach(function(a){
+    if(/contact/i.test(a.textContent))a.href="/contact.html";
+  });
 });
 })();
