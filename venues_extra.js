@@ -85,7 +85,8 @@ window._openM=function(id){
   var mb=document.getElementById("modalBody");if(mb)mb.innerHTML=h;
   var ov=document.getElementById("modalBackdrop");
   if(ov){ov.classList.remove("hidden");ov.style.display="flex";}};
-document.addEventListener("DOMContentLoaded",function(){
+function _init(){
+
   var sc=document.getElementById("countryFilter");
   [...new Set(_ec.map(function(e){return e.country;}))].sort().forEach(function(c){var o=document.createElement("option");o.value=c;o.textContent=c;sc.appendChild(o);});
   _render();
@@ -137,6 +138,30 @@ document.addEventListener("DOMContentLoaded",function(){
     if(/contact/i.test(a.textContent))a.href="/contact.html";
   });
 
-  document.querySelectorAll("a[href='#about']").forEach(function(a){a.href="/about.html";});
+}
+var __chunks=["/venues_data_1.js","/venues_data_2.js","/venues_data_3.js","/venues_data_4.js","/venues_data_5.js","/venues_data_6.js","/venues_data_7.js","/venues_data_8.js","/venues_data_9.js","/venues_data_10.js"];
+var __loaded=0;
+function __chunkDone(){
+  __loaded++;
+  if(__loaded===__chunks.length){
+    if(window.__VE && window.__VE.length){
+      try{
+        var extra=window.__VE.filter(Array.isArray).map(function(v){
+          return{id:v[0],name:v[1],continent:v[2],country:v[3],state:v[4],
+            city:v[5],address:v[6],phone:v[7],email:v[8],description:v[9],
+            tags:v.slice(10).map(function(i){return TAGS[i];})};
+        });
+        _ec=_ec.concat(extra);
+      }catch(ex){}
+    }
+    _init();
+  }
+}
+document.addEventListener("DOMContentLoaded",function(){
+  __chunks.forEach(function(src){
+    var s=document.createElement("script");
+    s.src=src; s.onload=__chunkDone; s.onerror=__chunkDone;
+    document.head.appendChild(s);
+  });
 });
 })();
