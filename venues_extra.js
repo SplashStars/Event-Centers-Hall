@@ -136,5 +136,7 @@ document.addEventListener("DOMContentLoaded",function(){
   document.querySelectorAll("footer a[href='#footer'], footer a[href='#']").forEach(function(a){
     if(/contact/i.test(a.textContent))a.href="/contact.html";
   });
+
+  document.querySelectorAll("a[href='#about']").forEach(function(a){a.href="/about.html";});
 });
 })();
