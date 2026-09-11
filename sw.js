@@ -3,7 +3,7 @@
    Strategy: Cache-first for assets, network-first for HTML
    ============================================================ */
 
-const CACHE_NAME = 'ecf-v3';
+const CACHE_NAME = 'ecf-v4';
 const OFFLINE_URL = '/';
 
 // Assets to pre-cache on install
