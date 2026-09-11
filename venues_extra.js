@@ -1,4 +1,28 @@
 (function(){
+try{
+  var __CORRECT_PUB="ca-pub-7215079923944618";
+  document.querySelectorAll('script[src*="adsbygoogle.js"]').forEach(function(s){
+    if(s.src.indexOf(__CORRECT_PUB)===-1){ s.remove(); }
+  });
+  document.querySelectorAll('ins.adsbygoogle').forEach(function(el){
+    el.setAttribute('data-ad-client', __CORRECT_PUB);
+  });
+  if(!document.querySelector('script[src*="adsbygoogle.js"][src*="'+__CORRECT_PUB+'"]')){
+    var ads=document.createElement('script');
+    ads.async=true;
+    ads.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client='+__CORRECT_PUB;
+    ads.crossOrigin='anonymous';
+    document.head.appendChild(ads);
+  }
+  var metaTag=document.querySelector('meta[name="google-adsense-account"]');
+  if(metaTag){ metaTag.setAttribute('content', __CORRECT_PUB); }
+  else {
+    var m=document.createElement('meta');
+    m.name='google-adsense-account'; m.content=__CORRECT_PUB;
+    document.head.appendChild(m);
+  }
+}catch(ex){}
+
 var _ec=[];
 try{
   _ec=_d.filter(Array.isArray).map(function(v){
