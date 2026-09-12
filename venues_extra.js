@@ -125,6 +125,29 @@ function _renderPagination(totalPages){
   container.appendChild(info);
 }
 
+function _buildTree(){
+  var tm=document.getElementById("treeMenu");
+  if(tm){
+    var tree={};
+    _ec.forEach(function(e){tree[e.continent]=tree[e.continent]||{};tree[e.continent][e.country]=tree[e.continent][e.country]||{};});
+    tm.innerHTML="";
+    Object.keys(tree).sort().forEach(function(cont){
+      var li=document.createElement("li");li.className="tree-item";
+      var btn=document.createElement("button");btn.className="tree-toggle";
+      btn.innerHTML="<i class=\"fa-solid fa-chevron-right chev\"></i> <i class=\"fa-solid fa-globe\"></i> "+_esc(cont);
+      (function(c){btn.addEventListener("click",function(){window.filterByContinent(c);window.toggleTree(btn);});})(cont);
+      var ul=document.createElement("ul");ul.className="tree-children";
+      Object.keys(tree[cont]).sort().forEach(function(cou){
+        var cli=document.createElement("li");
+        var cb=document.createElement("button");cb.className="tree-toggle";cb.textContent=cou;
+        (function(co){cb.addEventListener("click",function(ev){ev.stopPropagation();window.filterByCountry(co);window.toggleTree(cb);});})(cou);
+        cli.appendChild(cb);ul.appendChild(cli);
+      });
+      li.appendChild(btn);li.appendChild(ul);tm.appendChild(li);
+    });
+  }
+}
+
 function _render(){
   var _allData=_gfd();
   if(_ec.length===0 && (typeof __veMergedIdx==="undefined" || __veMergedIdx===0)){
@@ -231,26 +254,7 @@ function _init(){
   document.getElementById("stateFilter").addEventListener("change",function(e){_cf.state=e.target.value;_cf.city="";_pCity();_render();});
   document.getElementById("cityFilter").addEventListener("change",function(e){_cf.city=e.target.value;_render();});
   document.addEventListener("keydown",function(e){if(e.key==="Escape")window.closeModal();});
-  var tm=document.getElementById("treeMenu");
-  if(tm){
-    var tree={};
-    _ec.forEach(function(e){tree[e.continent]=tree[e.continent]||{};tree[e.continent][e.country]=tree[e.continent][e.country]||{};});
-    tm.innerHTML="";
-    Object.keys(tree).sort().forEach(function(cont){
-      var li=document.createElement("li");li.className="tree-item";
-      var btn=document.createElement("button");btn.className="tree-toggle";
-      btn.innerHTML="<i class=\"fa-solid fa-chevron-right chev\"></i> <i class=\"fa-solid fa-globe\"></i> "+_esc(cont);
-      (function(c){btn.addEventListener("click",function(){window.filterByContinent(c);window.toggleTree(btn);});})(cont);
-      var ul=document.createElement("ul");ul.className="tree-children";
-      Object.keys(tree[cont]).sort().forEach(function(cou){
-        var cli=document.createElement("li");
-        var cb=document.createElement("button");cb.className="tree-toggle";cb.textContent=cou;
-        (function(co){cb.addEventListener("click",function(ev){ev.stopPropagation();window.filterByCountry(co);window.toggleTree(cb);});})(cou);
-        cli.appendChild(cb);ul.appendChild(cli);
-      });
-      li.appendChild(btn);li.appendChild(ul);tm.appendChild(li);
-    });
-  }
+  _buildTree();
 
   // Patch nav links to dedicated pages (AdSense compliance)
   document.querySelectorAll("a[href='#privacy']").forEach(function(a){a.href="/privacy.html";});
@@ -281,6 +285,7 @@ function __mergeNewVE(){
       });
       _ec=_ec.concat(extra);
       _refreshCountries();
+      _buildTree();
       __veMergedIdx=window.__VE.length;
       var sv=document.getElementById("statVenues");
       if(sv) sv.textContent=_ec.length+"+";
