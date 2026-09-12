@@ -205,6 +205,19 @@ function _init(){
 
   var sc=document.getElementById("countryFilter");
   [...new Set(_ec.map(function(e){return e.country;}))].sort().forEach(function(c){var o=document.createElement("option");o.value=c;o.textContent=c;sc.appendChild(o);});
+  try{
+    var _qp=new URLSearchParams(location.search);
+    var _qCountry=_qp.get("country");
+    var _qCity=_qp.get("city");
+    if(_qCountry){_cf.country=_qCountry;}
+    if(_qCity){_cf.city=_qCity;}
+    if(_qCountry||_qCity){
+      if(typeof _pState==="function")_pState();
+      if(typeof _pCity==="function")_pCity();
+      var _cfEl=document.getElementById("countryFilter"); if(_cfEl&&_qCountry)_cfEl.value=_qCountry;
+      var _ctEl=document.getElementById("cityFilter"); if(_ctEl&&_qCity)_ctEl.value=_qCity;
+    }
+  }catch(ex){}
   _render();
   var sv=document.getElementById("statVenues");if(sv)sv.textContent=_ec.length+"+";
   var sco=document.getElementById("statCountries");if(sco)sco.textContent=new Set(_ec.map(function(e){return e.country;})).size;
