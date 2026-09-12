@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Event Centers & Venues by Country | Event Center Finder</title>
+<meta name="description" content="Browse 114,000+ event centers, banquet halls, and venues across 76 countries worldwide. Find the right venue in Nigeria, the United States, the UK, India, and more.">
+<link rel="canonical" href="https://eventcenterfinder.com/venues-by-country.html">
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; background: #f8fafc; color: #1e293b; line-height: 1.6; }
+  header { background: #172554; color: #fff; padding: 20px 24px; }
+  header .wrap { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  header a.logo { color: #fff; font-weight: 700; font-size: 1.2rem; text-decoration: none; }
+  header nav a { color: #cbd5e1; text-decoration: none; margin-left: 20px; font-size: 0.95rem; }
+  header nav a:hover { color: #fff; }
+  main { max-width: 1100px; margin: 0 auto; padding: 40px 24px 80px; }
+  h1 { font-size: 1.9rem; color: #0f172a; margin-bottom: 8px; }
+  .lead { color: #475569; font-size: 1.05rem; max-width: 720px; margin-bottom: 32px; }
+  .country-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+  .country-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px 16px; text-decoration: none; color: #1e293b; display: flex; justify-content: space-between; align-items: center; transition: box-shadow .15s, border-color .15s; }
+  .country-card:hover { border-color: #2563eb; box-shadow: 0 2px 8px rgba(37,99,235,0.12); }
+  .country-card .name { font-weight: 600; }
+  .country-card .count { color: #2563eb; font-size: 0.85rem; font-weight: 600; background: #eff6ff; padding: 3px 9px; border-radius: 999px; }
+  section.intro-block { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; margin-bottom: 36px; }
+  section.intro-block p { margin: 0 0 12px; color: #334155; }
+  section.intro-block p:last-child { margin-bottom: 0; }
+  footer { background: #172554; color: #cbd5e1; padding: 28px 24px; margin-top: 40px; }
+  footer .wrap { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-size: 0.9rem; }
+  footer a { color: #cbd5e1; }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="logo" href="/">Event Center Finder</a>
+    <nav>
+      <a href="/">Directory</a>
+      <a href="/venues-by-country.html">By Country</a>
+      <a href="/wedding-venue-guide.html">Venue Guide</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <h1>Event Centers & Venues by Country</h1>
+  <p class="lead">Explore our global directory of 114,738 event centers, banquet halls, conference venues, and wedding halls across 76 countries. Select a country below to see every listed venue.</p>
+
+  <section class="intro-block">
+    <p>Event Center Finder is a free, searchable directory built for anyone planning a wedding, conference, party, or corporate event. Every listing below links to venues we've catalogued in that country, complete with addresses, contact details, and capacity information where available.</p>
+    <p>Nigeria, the United States, and India currently have the largest number of listed venues, but our directory spans every populated continent — from Rwanda to Norway to Vietnam. If you're a venue owner and don't see your business listed, <a href="/contact.html">get in touch</a>.</p>
+  </section>
+
+  <div class="country-grid" id="countryGrid"></div>
+</main>
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Event Center Finder</span>
+    <span><a href="/privacy.html">Privacy</a> &middot; <a href="/terms.html">Terms</a> &middot; <a href="/contact.html">Contact</a></span>
+  </div>
+</footer>
+<script>
+var countries = [["Nigeria",14785],["United States",9384],["India",6126],["United Kingdom",4385],["South Africa",3716],["Canada",3467],["China",3410],["Australia",3340],["Germany",3168],["Kenya",3112],["Brazil",2981],["Ghana",2848],["UAE",2804],["Japan",2496],["Indonesia",2398],["France",2241],["Spain",2177],["Saudi Arabia",2111],["Mexico",2061],["Egypt",2038],["Malaysia",1922],["Thailand",1852],["South Korea",1806],["Philippines",1620],["Italy",1584],["Colombia",1526],["Morocco",1510],["Ethiopia",1494],["Argentina",1373],["Netherlands",1356],["Vietnam",1282],["Poland",1258],["Pakistan",1140],["New Zealand",1106],["Tanzania",1042],["Belgium",1019],["Turkey",1000],["Sweden",956],["Uganda",844],["Greece",830],["Rwanda",796],["Russia",740],["Singapore",550],["Bangladesh",500],["Chile",480],["Cameroon",430],["Côte d'Ivoire",430],["Ukraine",410],["Senegal",400],["Peru",370],["Zimbabwe",330],["Zambia",330],["Mozambique",320],["DR Congo",290],["Angola",240],["Switzerland",200],["Portugal",200],["Norway",150],["Denmark",150],["Austria",150],["Czech Republic",150],["Hungary",150],["Romania",150],["Ireland",150],["Qatar",150],["Botswana",100],["Namibia",100],["Tunisia",100],["Finland",100],["Kuwait",100],["Bahrain",100],["Israel",100],["Mali",95],["Sudan",60],["Ecuador",50],["Venezuela",49]];
+var grid = document.getElementById("countryGrid");
+countries.forEach(function(c){
+  var a = document.createElement("a");
+  a.className = "country-card";
+  a.href = "/?country=" + encodeURIComponent(c[0]);
+  a.innerHTML = '<span class="name">' + c[0] + '</span><span class="count">' + c[1].toLocaleString() + '</span>';
+  grid.appendChild(a);
+});
+</script>
+</body>
+</html>
