@@ -1,3 +1,4 @@
+(function(){var st=document.createElement("style");st.textContent=".skeleton-card{position:relative;overflow:hidden}.sk-line{height:12px;border-radius:6px;background:#e5e7eb;margin-bottom:10px;position:relative;overflow:hidden}.sk-title{height:16px;width:70%}.skeleton-card::after,.sk-line::after{content:'';position:absolute;top:0;left:-150%;height:100%;width:150%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.6),transparent);animation:skshimmer 1.3s infinite}@keyframes skshimmer{100%{left:150%}}";document.head.appendChild(st);})();
 (function(){
 try{
   var __CORRECT_PUB="ca-pub-7215079923944618";
@@ -126,6 +127,20 @@ function _renderPagination(totalPages){
 
 function _render(){
   var _allData=_gfd();
+  if(_ec.length===0 && (typeof __veMergedIdx==="undefined" || __veMergedIdx===0)){
+    var _cg=document.getElementById("cardsGrid");
+    if(_cg){
+      var _sk="";
+      for(var _si=0;_si<8;_si++){_sk+='<div class="skeleton-card" style="background:#fff;border-radius:12px;padding:16px;box-shadow:0 1px 3px rgba(0,0,0,0.08);"><div class="sk-line sk-title"></div><div class="sk-line" style="width:60%"></div><div class="sk-line" style="width:80%"></div><div class="sk-line" style="width:40%"></div></div>';}
+      _cg.innerHTML=_sk;
+      _cg.style.display="grid";
+    }
+    var _ct=document.getElementById("cardsTable"); if(_ct) _ct.style.display="none";
+    var _rc=document.getElementById("resultCount"); if(_rc) _rc.textContent="\u2026";
+    var _nr=document.getElementById("noResults"); if(_nr) _nr.style.display="none";
+    var _pb=document.getElementById("pgbox"); if(_pb) _pb.innerHTML="";
+    return;
+  }
   var _cfSig=_cf.search+"|"+_cf.country+"|"+_cf.state+"|"+_cf.city+"|"+_cf.continent;
   if(_cfSig!==_lastCfSig){_pg=1;_lastCfSig=_cfSig;}
   var _totalPages=Math.max(1,Math.ceil(_allData.length/_PAGE_SIZE));
@@ -240,7 +255,7 @@ function _init(){
   });
 
 }
-var __chunks=["/venues_data_1.js","/venues_data_2.js","/venues_data_3.js","/venues_data_4.js","/venues_data_5.js","/venues_data_6.js","/venues_data_7.js","/venues_data_8.js","/venues_data_9.js","/venues_data_10.js"];
+var __chunks=["/venues_base_1.js","/venues_base_2.js","/venues_base_3.js","/venues_base_4.js","/venues_base_5.js","/venues_base_6.js","/venues_base_7.js","/venues_base_8.js","/venues_base_9.js","/venues_base_10.js","/venues_base_11.js","/venues_base_12.js","/venues_data_1.js","/venues_data_2.js","/venues_data_3.js","/venues_data_4.js","/venues_data_5.js","/venues_data_6.js","/venues_data_7.js","/venues_data_8.js","/venues_data_9.js","/venues_data_10.js"];
 var __veMergedIdx=0;
 function __mergeNewVE(){
   if(window.__VE && window.__VE.length>__veMergedIdx){
